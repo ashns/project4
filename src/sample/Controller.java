@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.scene.image.ImageView;
 
@@ -18,9 +19,12 @@ public class Controller {
     @FXML
     ImageView donutImageV = new ImageView();
     @FXML
+    ImageView coffeeImageV = new ImageView();
+    @FXML
     Button orderBTN = new Button();
     @FXML
     Button storeOrderBTN = new Button();
+
 
 
     public void pressDonut(ActionEvent event) throws Exception {
