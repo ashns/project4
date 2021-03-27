@@ -25,6 +25,7 @@ public class Controller {
 
     public void pressDonut(ActionEvent event) throws Exception {
         try {
+
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("donut.fxml"));
             Parent root1 = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
