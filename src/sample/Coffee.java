@@ -1,5 +1,7 @@
 package sample;
 
+import java.util.ArrayList;
+
 public class Coffee extends MenuItem implements Customizable{
 
     final int SIZE_SHORT = 1;
@@ -13,11 +15,10 @@ public class Coffee extends MenuItem implements Customizable{
     final double ADDON_COST = .20;
 
     int size;
-    int quantity;
-    String addOns[] = new String[5];
+    ArrayList[] addOns = new ArrayList[0];
 
-    public Coffee(double price, int size, int quantity, String addOns[]) {
-        super(price);
+    public Coffee(double price, int size, int quantity, ArrayList addOns[]) {
+        super(price, quantity);
         this.size = size;
         this.addOns=addOns;
     }
