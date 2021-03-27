@@ -11,17 +11,31 @@ public class Donut extends MenuItem{
 
     String flavor;
     int donutType;
-    int quantity;
+
 
     public Donut(double price, int type, int count, String kind){
-        super(price);
+        super(price, count);
         flavor = kind;
         donutType = type;
-        quantity = count;
     }
 
     @Override
     public String toString(){
-        return "";
+        String message = "(" + quantity + ") " + flavor + " " ;
+        switch (donutType){
+            case YEAST_DONUT:
+                message += "yeast donut";
+                break;
+            case CAKE_DONUT:
+                message += "cake donut";
+                break;
+            case DONUT_HOLE:
+                message += "donut hole";
+                break;
+            default:
+                message += "bagel";
+        }
+        if(quantity > 1 || quantity <= 0) message += "s";
+        return message + "\n";
     }
 }
