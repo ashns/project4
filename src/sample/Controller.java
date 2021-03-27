@@ -10,12 +10,17 @@ import javafx.stage.Stage;
 import javafx.scene.image.ImageView;
 
 public class Controller {
+
     @FXML
     Button donutBTN = new Button();
     @FXML
     Button coffeeBTN = new Button();
     @FXML
     ImageView donutImageV = new ImageView();
+    @FXML
+    Button orderBTN = new Button();
+    @FXML
+    Button storeOrderBTN = new Button();
 
 
     public void pressDonut(ActionEvent event) throws Exception {
@@ -41,5 +46,29 @@ public class Controller {
             e.printStackTrace();
         }
     }
+
+    public void pressOrder(ActionEvent event) throws Exception {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("order.fxml"));
+            Parent root1 = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root1));
+            stage.show();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public void pressStoreOrder(ActionEvent event) throws Exception {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("storeOrder.fxml"));
+            Parent root1 = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root1));
+            stage.show();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }
