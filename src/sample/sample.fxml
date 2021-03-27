@@ -28,18 +28,18 @@
             </HBox>
             <VBox layoutX="14.0" layoutY="20.0" prefHeight="340.0" prefWidth="268.0">
                <children>
-                  <Button fx:id="donutBTN" contentDisplay="TOP" onAction="#pressDonut" mnemonicParsing="false" prefHeight="158.0" prefWidth="259.0" text="Donuts">
+                  <Button fx:id="donutBTN" contentDisplay="TOP" mnemonicParsing="false" prefHeight="158.0" prefWidth="259.0" text="Donuts">
                      <graphic>
-                        <ImageView fitHeight="111.0" fitWidth="228.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="donutImageV" fitHeight="111.0" fitWidth="228.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../OneDrive/Pictures/memes/tempDonut.jpg" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="coffeeBTN" contentDisplay="TOP" onAction="#pressCoffee" mnemonicParsing="false" prefHeight="143.0" prefWidth="260.0" text="Coffee">
+                  <Button fx:id="coffeeBTN" contentDisplay="TOP" mnemonicParsing="false" prefHeight="143.0" prefWidth="260.0" text="Coffee">
                      <graphic>
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="coffeeImageV" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../OneDrive/Pictures/memes/tempCoffee.jpg" />
                            </image>

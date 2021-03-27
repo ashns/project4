@@ -7,12 +7,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import javafx.scene.image.ImageView;
 
 public class Controller {
     @FXML
     Button donutBTN = new Button();
     @FXML
     Button coffeeBTN = new Button();
+    @FXML
+    ImageView donutImageV = new ImageView();
+
 
     public void pressDonut(ActionEvent event) throws Exception {
         try {
