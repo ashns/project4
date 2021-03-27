@@ -16,4 +16,12 @@ public class MenuItem {
     double getPrice(){
         return itemPrice;
     }
+
+    void setQuantity(int newQuantity){
+        quantity = newQuantity;
+    }
+
+    double getQuantity(){
+        return quantity;
+    }
 }

@@ -13,10 +13,31 @@ public class Donut extends MenuItem{
     int donutType;
 
 
-    public Donut(double price, int type, int count, String kind){
-        super(price, count);
+    public Donut( int type, String kind){
+        super(0, 1);
         flavor = kind;
         donutType = type;
+    }
+
+    void setDonutType(int newType){
+        donutType = newType;
+        switch (donutType){
+            case YEAST_DONUT:
+                setPrice(YEAST_PRICE);
+                break;
+            case CAKE_DONUT:
+                setPrice(CAKE_PRICE);
+                break;
+            case DONUT_HOLE:
+                setPrice(HOLE_PRICE);
+                break;
+            default:
+                setPrice(0);
+        }
+    }
+
+    void setFlavor(String newFlavor){
+        flavor = newFlavor;
     }
 
     @Override
@@ -38,4 +59,6 @@ public class Donut extends MenuItem{
         if(quantity > 1 || quantity <= 0) message += "s";
         return message + "\n";
     }
+
+
 }
