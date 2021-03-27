@@ -3,8 +3,8 @@ package sample;
 public class MenuItem {
     double itemPrice;
 
-    public MenuItem(){
-        itemPrice = 0;
+    public MenuItem(double price){
+        itemPrice = price;
     }
 
     void setPrice(double newPrice){
