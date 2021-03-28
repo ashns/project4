@@ -42,13 +42,15 @@ public class Controller {
 
     public void pressCoffee(ActionEvent event) throws Exception {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("coffee.fxml"));
-            Parent root1 = (Parent) fxmlLoader.load();
+            //FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("coffee.fxml"));
+            Parent root1 = FXMLLoader.load(getClass().getResource("coffee.fxml"));
             Stage stage = new Stage();
-            stage.setScene(new Scene(root1));
+            stage.setTitle("Order Coffee");
+            stage.setScene(new Scene(root1, 600, 400));
             stage.show();
         } catch(Exception e) {
             e.printStackTrace();
+
         }
     }
 
