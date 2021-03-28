@@ -15,10 +15,16 @@ public class Order implements Customizable{
         items = newItem;
     }
 
-    private int search(){
+    private int search(Object obj){
+        for(int i = 0; i < itemCount; i++){
+            if(items[i].equals(obj)){
+                return i;
+            }
+        }
         return NOT_FOUND;
     }
 
+    @Override
     public boolean add(Object obj){
         if(itemCount <= items.length){
             grow();
@@ -36,6 +42,7 @@ public class Order implements Customizable{
         return false;
     }
 
+    @Override
     public boolean remove(Object obj){
 
         return false;

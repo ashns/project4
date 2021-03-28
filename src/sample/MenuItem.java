@@ -9,19 +9,28 @@ public class MenuItem {
         quantity = number;
     }
 
-    void setPrice(double newPrice){
+    public void setPrice(double newPrice){
         itemPrice = newPrice;
     }
 
-    double getPrice(){
+    public double getPrice(){
         return itemPrice;
     }
 
-    void setQuantity(int newQuantity){
+    public void setQuantity(int newQuantity){
         quantity = newQuantity;
     }
 
-    double getQuantity(){
+    public double getQuantity(){
         return quantity;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        MenuItem compare = (MenuItem)obj;
+        if(compare.getPrice() == itemPrice)
+            return true;
+        else
+            return false;
     }
 }

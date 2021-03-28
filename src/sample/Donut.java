@@ -13,10 +13,10 @@ public class Donut extends MenuItem{
     int donutType;
 
 
-    public Donut( int type, String kind){
+    public Donut(){
         super(0, 1);
-        flavor = kind;
-        donutType = type;
+        flavor = "";
+        donutType = 1;
     }
 
     public void setDonutType(int newType){
@@ -70,9 +70,12 @@ public class Donut extends MenuItem{
 
     @Override
     public boolean equals(Object obj){
-        Donut compare = (Donut)obj;
-        if(compare.getDonutType() == donutType && compare.getFlavor().equals(flavor))
-            return true;
+        if(super.equals(obj)) {
+            Donut compare = (Donut) obj;
+            if (compare.getDonutType() == donutType && compare.getFlavor().equals(flavor))
+                return true;
+            else return false;
+        }
         else
             return false;
     }
