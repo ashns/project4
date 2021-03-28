@@ -44,7 +44,16 @@ public class Order implements Customizable{
 
     @Override
     public boolean remove(Object obj){
-
+        int index = search(obj);
+        if(index != NOT_FOUND){
+            for(int i = index; i < itemCount; i++){
+                items[i] = items[i+1];
+            }
+            items[itemCount] = null;
+            itemCount--;
+            return true;
+        }
+        else
         return false;
     }
 }
