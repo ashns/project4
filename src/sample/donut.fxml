@@ -10,11 +10,11 @@
 
 <AnchorPane prefHeight="269.0" prefWidth="543.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.donutController">
    <children>
-      <ComboBox layoutX="14.0" layoutY="177.0" prefWidth="150.0" promptText="Select a donut" />
-      <ComboBox layoutX="199.0" layoutY="177.0" prefWidth="150.0" promptText="Select a flavor" />
-      <Button layoutX="198.0" layoutY="222.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Order Donut" />
-      <Slider blockIncrement="1.0" layoutX="13.0" layoutY="215.0" majorTickUnit="1.0" max="12.0" min="1.0" minorTickCount="12" prefHeight="38.0" prefWidth="166.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="1.0" />
-      <ListView layoutX="363.0" layoutY="14.0" prefHeight="246.0" prefWidth="166.0" />
+      <ComboBox fx:id="donutTypeCB" editable="true" layoutX="14.0" layoutY="177.0" prefWidth="150.0" promptText="Select a donut" />
+      <ComboBox fx:id="donutFlavorCB" editable="true" layoutX="199.0" layoutY="177.0" prefWidth="150.0" promptText="Select a flavor" />
+      <Button fx:id="orderBTN" layoutX="198.0" layoutY="222.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Order Donut" />
+      <Slider fx:id="quantitySlider" blockIncrement="1.0" layoutX="13.0" layoutY="215.0" majorTickUnit="1.0" max="12.0" min="1.0" minorTickCount="12" prefHeight="38.0" prefWidth="166.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="1.0" />
+      <ListView fx:id="currentListView" layoutX="363.0" layoutY="14.0" prefHeight="246.0" prefWidth="166.0" />
       <ImageView fitHeight="150.0" fitWidth="336.0" layoutX="13.0" layoutY="14.0" pickOnBounds="true">
          <image>
             <Image url="@Image/tempDonut.jpg" />
