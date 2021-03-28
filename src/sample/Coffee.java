@@ -1,7 +1,5 @@
 package sample;
 
-import java.util.ArrayList;
-
 public class Coffee extends MenuItem implements Customizable{
 
     final int SIZE_SHORT = 1;
@@ -63,6 +61,7 @@ public class Coffee extends MenuItem implements Customizable{
             default:
                 message += "bagel";
         }
+
         if(quantity > 1 || quantity <= 0) message += "s";
         for(int i = 0; i < 5; i++) {
             String tempMessage = "";
