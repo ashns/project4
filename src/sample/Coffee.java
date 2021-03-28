@@ -26,11 +26,21 @@ public class Coffee extends MenuItem implements Customizable{
 
     @Override
     public boolean add(Object obj) {
+        if(obj instanceof coffeeAddOns){
+            coffeeAddOns temp = (coffeeAddOns)obj;
+            addOns[temp.getType()].setQuantity(temp.getQuantity());
+            return true;
+        }
         return false;
     }
 
     @Override
     public boolean remove(Object obj) {
+        if(obj instanceof coffeeAddOns){
+            coffeeAddOns temp = (coffeeAddOns)obj;
+            addOns[temp.getType()].setQuantity(0);
+            return true;
+        }
         return false;
     }
 
@@ -56,13 +66,13 @@ public class Coffee extends MenuItem implements Customizable{
         if(quantity > 1 || quantity <= 0) message += "s";
         for(int i = 0; i < 5; i++) {
             String tempMessage = "";
-            if (addOns[i].getQuantity() == 0) {
+            if ((addOns[i].getQuantity() == 0)) {
                 continue;
             } else {
                 if (hasAddOns == false) {
-                    tempMessage += " with " + addOns[i].getQuantity() + " " + addOns[i].getType();
+                    tempMessage += " with " + addOns[i].getQuantity() + " " + addOns[i].getTypeString();
                 } else {
-                    tempMessage += ", " + addOns[i].getQuantity() + " " + addOns[i].getType();
+                    tempMessage += ", " + addOns[i].getQuantity() + " " + addOns[i].getTypeString();
                 }
             }
            message += tempMessage;

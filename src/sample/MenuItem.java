@@ -18,10 +18,10 @@ public class MenuItem {
     }
 
     public void setQuantity(int newQuantity){
-        quantity = newQuantity;
+        this.quantity = newQuantity;
     }
 
-    public double getQuantity(){
+    public int getQuantity(){
         return quantity;
     }
 

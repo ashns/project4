@@ -3,11 +3,11 @@ package sample;
 import java.util.ArrayList;
 
 public class coffeeAddOns extends MenuItem{
-    final int CREAM = 1;
-    final int SYRUP = 2;
-    final int MILK = 3;
-    final int CARAMEL = 4;
-    final int WHIPPED_CREME = 5;
+    final int CREAM = 0;
+    final int SYRUP = 1;
+    final int MILK = 2;
+    final int CARAMEL = 3;
+    final int WHIPPED_CREME = 4;
 
     int type;
     public coffeeAddOns(double price, int number, int type) {
@@ -15,20 +15,24 @@ public class coffeeAddOns extends MenuItem{
         this.type = type;
     }
 
-    public String getType() {
+    public String getTypeString() {
         switch (this.type) {
-            case 1:
+            case CREAM:
                 return "cream";
-            case 2:
+            case SYRUP:
                 return "syrup";
-            case 3:
+            case MILK:
                 return "milk";
-            case 4:
+            case CARAMEL:
                 return "caramel";
-            case 5:
+            case WHIPPED_CREME:
                 return "whipped creme";
             default:
                 return null;
         }
+    }
+
+    public int getType(){
+        return this.type;
     }
 }
