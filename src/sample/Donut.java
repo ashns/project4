@@ -12,11 +12,16 @@ public class Donut extends MenuItem{
     String flavor;
     int donutType;
 
-
     public Donut(){
         super(0, 1);
         flavor = "";
         donutType = 1;
+    }
+
+    public Donut(int price, int number, String taste, int type){
+        super(price, number);
+        flavor = taste;
+        donutType = type;
     }
 
     public void setDonutType(int newType){
