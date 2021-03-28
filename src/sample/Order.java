@@ -1,4 +1,43 @@
 package sample;
 
-public class Order {
+public class Order implements Customizable{
+    final int NOT_FOUND = -1;
+
+    private MenuItem items[] = new MenuItem[4];
+    private int itemCount = 0;
+
+
+    private void grow(){
+        MenuItem newItem[] = new MenuItem[items.length+4];
+        for(int i = 0; i < itemCount; i++){
+            newItem[i] = items[i];
+        }
+        items = newItem;
+    }
+
+    private int search(){
+        return NOT_FOUND;
+    }
+
+    public boolean add(Object obj){
+        if(itemCount <= items.length){
+            grow();
+        }
+        if(obj instanceof Donut || obj instanceof Coffee){
+            if(obj instanceof Donut) {
+                items[itemCount] = (Donut) obj;
+            }
+            else if(obj instanceof Coffee) {
+                items[itemCount] = (Coffee) obj;
+            }
+            itemCount++;
+            return true;
+        }
+        return false;
+    }
+
+    public boolean remove(Object obj){
+
+        return false;
+    }
 }

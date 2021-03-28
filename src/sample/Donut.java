@@ -19,7 +19,7 @@ public class Donut extends MenuItem{
         donutType = type;
     }
 
-    void setDonutType(int newType){
+    public void setDonutType(int newType){
         donutType = newType;
         switch (donutType){
             case YEAST_DONUT:
@@ -36,8 +36,16 @@ public class Donut extends MenuItem{
         }
     }
 
-    void setFlavor(String newFlavor){
+    public void setFlavor(String newFlavor){
         flavor = newFlavor;
+    }
+
+    public int getDonutType(){
+        return donutType;
+    }
+
+    public String getFlavor(){
+        return flavor;
     }
 
     @Override
@@ -58,6 +66,15 @@ public class Donut extends MenuItem{
         }
         if(quantity > 1 || quantity <= 0) message += "s";
         return message + "\n";
+    }
+
+    @Override
+    public boolean equals(Object obj){
+        Donut compare = (Donut)obj;
+        if(compare.getDonutType() == donutType && compare.getFlavor().equals(flavor))
+            return true;
+        else
+            return false;
     }
 
 
