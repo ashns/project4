@@ -56,4 +56,12 @@ public class Order implements Customizable{
         else
         return false;
     }
+
+    public String print(){
+        String order = "";
+        for(int i = 0; i <= itemCount; i++){
+            order += items[i].toString();
+        }
+        return order;
+    }
 }
