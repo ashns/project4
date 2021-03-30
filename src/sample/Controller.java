@@ -35,6 +35,8 @@ public class Controller {
             stage.setTitle("Order donut");
             stage.setScene(new Scene(root1));
             stage.show();
+            donutController sub = new donutController();
+            sub.setMainController(this);
         } catch(Exception e) {
             e.printStackTrace();
         }
@@ -42,8 +44,8 @@ public class Controller {
 
     public void pressCoffee(ActionEvent event) throws Exception {
         try {
-            //FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("coffee.fxml"));
-            Parent root1 = FXMLLoader.load(getClass().getResource("coffee.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("coffee.fxml"));
+            Parent root1 = (Parent)fxmlLoader.load();
             Stage stage = new Stage();
             stage.setTitle("Order Coffee");
             stage.setScene(new Scene(root1, 600, 400));

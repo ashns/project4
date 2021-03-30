@@ -65,7 +65,7 @@ public class Order implements Customizable{
         for(int i = 0; i <= itemCount; i++){
             order += items[i].toString();
         }
-        order += "\n---------------\nTotal Price: $" + orderPrice() + "\n";
+        order += "\n---------------\nTotal Price: $" + usd.format(orderPrice()) + "\n";
         return order;
     }
 
