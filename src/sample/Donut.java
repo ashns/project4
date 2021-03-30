@@ -31,15 +31,20 @@ public class Donut extends MenuItem{
 
     @Override
     public double itemPrice() {
+        double price = 0;
         switch(donutType){
             case YEAST_DONUT:
-                return YEAST_PRICE;
+                price = YEAST_PRICE;
+                break;
             case CAKE_DONUT:
-                return CAKE_PRICE;
+                price = CAKE_PRICE;
+                break;
             case DONUT_HOLE:
-                return HOLE_PRICE;
-            default: return 0;
+                price =  HOLE_PRICE;
+                break;
+            default: price = 0;
         }
+        return price * quantity;
     }
 
     public void setFlavor(String newFlavor){

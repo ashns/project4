@@ -1,10 +1,13 @@
 package sample;
 
+import java.text.DecimalFormat;
+
 public class Order implements Customizable{
     final int NOT_FOUND = -1;
 
     private MenuItem items[] = new MenuItem[4];
     private int itemCount = 0;
+    DecimalFormat usd = new DecimalFormat("#.##");
 
 
     private void grow(){
@@ -62,6 +65,15 @@ public class Order implements Customizable{
         for(int i = 0; i <= itemCount; i++){
             order += items[i].toString();
         }
+        order += "\n---------------\nTotal Price: $" + orderPrice() + "\n";
         return order;
+    }
+
+    public double orderPrice(){
+        double price = 0;
+        for(int i = 0; i < itemCount; i++){
+            price += items[i].itemPrice();
+        }
+        return price;
     }
 }
