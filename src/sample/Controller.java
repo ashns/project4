@@ -31,7 +31,7 @@ public class Controller {
     public StoreOrders[] currentStoreOrders = new StoreOrders[4];
     public Order[] currentOrder = new Order[4];
 
-
+    String test = "hello!";
 
     public void pressDonut(ActionEvent event) throws Exception {
         try {
@@ -43,7 +43,7 @@ public class Controller {
             stage.show();
             donutController sub = new donutController();
             sub.setMainController(this);
-            sub.getInformation(currentOrder);
+            sub.getInformation(currentOrder, test);
         } catch(Exception e) {
             e.printStackTrace();
         }

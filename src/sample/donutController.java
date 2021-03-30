@@ -49,8 +49,9 @@ public class donutController {
 
     }
     
-    public void getInformation(Order[] orders){
+    public void getInformation(Order[] orders, String test){
         this.newOrder = orders;
+        System.out.println(test);
     }
 
 }
