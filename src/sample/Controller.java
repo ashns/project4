@@ -43,6 +43,7 @@ public class Controller {
             stage.show();
             donutController sub = new donutController();
             sub.setMainController(this);
+            sub.getInformation(currentOrder);
         } catch(Exception e) {
             e.printStackTrace();
         }

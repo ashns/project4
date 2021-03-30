@@ -8,7 +8,6 @@ public class Donut extends MenuItem{
     final double YEAST_PRICE = 1.39;
     final double CAKE_PRICE = 1.59;
     final double HOLE_PRICE = 0.33;
-
     String flavor;
     int donutType;
 

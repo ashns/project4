@@ -22,7 +22,7 @@ public class donutController {
     final int YEAST_DONUT = 1;
     final int CAKE_DONUT = 2;
     final int DONUT_HOLE = 3;
-
+    Order[] newOrder = new Order[4];
 
     public void setMainController(Controller parent){
         main = parent;
@@ -49,6 +49,8 @@ public class donutController {
 
     }
     
-
+    public void getInformation(Order[] orders){
+        this.newOrder = orders;
+    }
 
 }
