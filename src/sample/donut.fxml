@@ -12,7 +12,7 @@
    <children>
       <ComboBox fx:id="donutTypeCB" layoutX="14.0" layoutY="177.0" prefWidth="150.0" promptText="Select a donut" />
       <ComboBox fx:id="donutFlavorCB" layoutX="199.0" layoutY="177.0" prefWidth="150.0" promptText="Select a flavor" />
-      <Button fx:id="orderBTN" layoutX="198.0" layoutY="222.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Add to Order" />
+      <Button fx:id="orderBTN" layoutX="198.0" layoutY="222.0" onAction="#pressOrderBTN" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Add to Order" />
       <Slider fx:id="quantitySlider" blockIncrement="1.0" layoutX="13.0" layoutY="215.0" majorTickUnit="1.0" max="12.0" min="1.0" minorTickCount="0" prefHeight="38.0" prefWidth="166.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="1.0" />
       <ListView fx:id="currentListView" layoutX="363.0" layoutY="14.0" prefHeight="246.0" prefWidth="166.0" />
       <ImageView fitHeight="150.0" fitWidth="336.0" layoutX="13.0" layoutY="14.0" pickOnBounds="true">
