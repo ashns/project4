@@ -20,4 +20,6 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+    public StoreOrders[] currentStoreOrders = new StoreOrders[4];
+    public Order[] currentOrder = new Order[4];
 }

@@ -24,6 +24,8 @@ public class Controller {
     Button orderBTN = new Button();
     @FXML
     Button storeOrderBTN = new Button();
+    public StoreOrders[] currentStoreOrders = new StoreOrders[4];
+    public Order[] currentOrder = new Order[4];
 
 
 
