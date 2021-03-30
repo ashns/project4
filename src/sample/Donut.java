@@ -13,31 +13,32 @@ public class Donut extends MenuItem{
     int donutType;
 
     public Donut(){
-        super(0, 1);
+        super( 1);
         flavor = "";
         donutType = 1;
     }
 
-    public Donut(int price, int number, String taste, int type){
-        super(price, number);
+    public Donut(int number, String taste, int type){
+        super(number);
         flavor = taste;
         donutType = type;
     }
 
     public void setDonutType(int newType){
         donutType = newType;
-        switch (donutType){
+        itemPrice();
+    }
+
+    @Override
+    public double itemPrice() {
+        switch(donutType){
             case YEAST_DONUT:
-                setPrice(YEAST_PRICE);
-                break;
+                return YEAST_PRICE;
             case CAKE_DONUT:
-                setPrice(CAKE_PRICE);
-                break;
+                return CAKE_PRICE;
             case DONUT_HOLE:
-                setPrice(HOLE_PRICE);
-                break;
-            default:
-                setPrice(0);
+                return HOLE_PRICE;
+            default: return 0;
         }
     }
 

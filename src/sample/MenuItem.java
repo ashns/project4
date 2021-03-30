@@ -1,20 +1,16 @@
 package sample;
 
 public class MenuItem {
-    double itemPrice;
+
     int quantity;
 
-    public MenuItem(double price, int number){
-        itemPrice = price;
+    public MenuItem(int number){
+
         quantity = number;
     }
 
-    public void setPrice(double newPrice){
-        itemPrice = newPrice;
-    }
-
-    public double getPrice(){
-        return itemPrice;
+    public double itemPrice(){
+        return 0;
     }
 
     public void setQuantity(int newQuantity){
@@ -28,7 +24,7 @@ public class MenuItem {
     @Override
     public boolean equals(Object obj) {
         MenuItem compare = (MenuItem)obj;
-        if(compare.getPrice() == itemPrice)
+        if(compare.getQuantity() == quantity)
             return true;
         else
             return false;
