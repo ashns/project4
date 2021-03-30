@@ -11,7 +11,7 @@ public class coffeeAddOns extends MenuItem{
 
     int type;
     public coffeeAddOns(double price, int number, int type) {
-        super(price, number);
+        super(number);
         this.type = type;
     }
 

@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.scene.image.ImageView;
+import javafx.scene.control.Label;
 
 public class Controller {
 
@@ -24,6 +25,9 @@ public class Controller {
     Button orderBTN = new Button();
     @FXML
     Button storeOrderBTN = new Button();
+    @FXML
+    Label testl = new Label();
+
     public StoreOrders[] currentStoreOrders = new StoreOrders[4];
     public Order[] currentOrder = new Order[4];
 
@@ -32,7 +36,7 @@ public class Controller {
     public void pressDonut(ActionEvent event) throws Exception {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("donut.fxml"));
-            Parent root1 = (Parent) fxmlLoader.load();
+            Parent root1 = fxmlLoader.load();
             Stage stage = new Stage();
             stage.setTitle("Order donut");
             stage.setScene(new Scene(root1));

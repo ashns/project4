@@ -17,7 +17,7 @@ public class Coffee extends MenuItem implements Customizable{
     coffeeAddOns[] addOns = new coffeeAddOns[4];
 
     public Coffee(double price, int size, int quantity, coffeeAddOns addOns[]) {
-        super(price, quantity);
+        super(quantity);
         this.size = size;
         this.addOns = addOns;
     }
