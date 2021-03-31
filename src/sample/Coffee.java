@@ -12,11 +12,16 @@ public class Coffee extends MenuItem implements Customizable{
     final double VENTI_PRICE = 3.49;
     final double ADDON_COST = .20;
     boolean hasAddOns = false;
+    final int CREAM = 0;
+    final int SYRUP = 1;
+    final int MILK = 2;
+    final int CARAMEL = 3;
+    final int WHIPPED_CREME = 4;
 
     int size;
-    coffeeAddOns[] addOns = new coffeeAddOns[4];
+    String[] addOns;
 
-    public Coffee(double price, int size, int quantity, coffeeAddOns addOns[]) {
+    public Coffee(int size, int quantity, String addOns[]) {
         super(quantity);
         this.size = size;
         this.addOns = addOns;
@@ -24,20 +29,42 @@ public class Coffee extends MenuItem implements Customizable{
 
     @Override
     public boolean add(Object obj) {
-        if(obj instanceof coffeeAddOns){
-            coffeeAddOns temp = (coffeeAddOns)obj;
-            addOns[temp.getType()].setQuantity(temp.getQuantity());
-            return true;
+        if(obj instanceof String){
+            String temp = (String)obj;
+            if(temp.equals("cream")){
+                addOns[CREAM] = "cream";
+                return true;
+            }
+            else if(temp.equals("syrup")){
+                addOns[SYRUP] = "syrup";
+                return true;
+            }
+            else if(temp.equals("milk")){
+                addOns[MILK] = "milk";
+                return true;
+            }
+            else if(temp.equals("caramel")){
+                addOns[CARAMEL] = "caramel";
+                return true;
+            }
+            else{
+                addOns[WHIPPED_CREME] = "whipped creme";
+                return true;
+            }
         }
         return false;
     }
 
     @Override
     public boolean remove(Object obj) {
-        if(obj instanceof coffeeAddOns){
-            coffeeAddOns temp = (coffeeAddOns)obj;
-            addOns[temp.getType()].setQuantity(0);
-            return true;
+        if(obj instanceof String){
+            String temp = (String)obj;
+            for(int i = 0; i<addOns.length; i++){
+                if(addOns[i].equals(temp)){
+                    addOns[i]=null;
+                    return true;
+                }
+            }
         }
         return false;
     }
@@ -65,19 +92,18 @@ public class Coffee extends MenuItem implements Customizable{
         if(quantity > 1 || quantity <= 0) message += "s";
         for(int i = 0; i < 5; i++) {
             String tempMessage = "";
-            if ((addOns[i].getQuantity() == 0)) {
+            if ((addOns[i] == null)) {
                 continue;
             } else {
                 if (hasAddOns == false) {
-                    tempMessage += " with " + addOns[i].getQuantity() + " " + addOns[i].getTypeString();
+                    tempMessage += " with " + addOns[i];
                 } else {
-                    tempMessage += ", " + addOns[i].getQuantity() + " " + addOns[i].getTypeString();
+                    tempMessage += ", " + addOns[i];
                 }
             }
            message += tempMessage;
         }
         return message + "\n";
     }
-
 }
 
