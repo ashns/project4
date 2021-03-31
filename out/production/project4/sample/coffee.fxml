@@ -1,11 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.coffeeController">
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.coffeeController">
    <children>
-      <Label layoutX="286.0" layoutY="192.0" text="Coffee" />
+      <Label layoutX="282.0" layoutY="14.0" text="Coffee" />
+      <ImageView fitHeight="168.0" fitWidth="253.0" layoutX="21.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Image/tempCoffee.jpg" />
+         </image>
+      </ImageView>
+      <ListView layoutX="337.0" layoutY="23.0" prefHeight="363.0" prefWidth="252.0" />
+      <CheckBox layoutX="37.0" layoutY="247.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="82.0" text="Cream" />
+      <ComboBox layoutX="21.0" layoutY="200.0" prefWidth="150.0" promptText="Select a Size">
+         <items>
+         <FXCollections fx:factory="observableArrayList">
+            <String fx:value="Short" />
+            <String fx:value="Tall" />
+            <String fx:value="Grande" />
+            <String fx:value="Venti" />
+         </FXCollections>
+      </items></ComboBox>
+      <CheckBox layoutX="37.0" layoutY="276.0" mnemonicParsing="false" text="Syrup" />
+      <CheckBox layoutX="37.0" layoutY="304.0" mnemonicParsing="false" text="Milk" />
+      <CheckBox layoutX="37.0" layoutY="332.0" mnemonicParsing="false" text="Caramel" />
+      <CheckBox layoutX="127.0" layoutY="247.0" mnemonicParsing="false" text="Whipped Creme" />
+      <ComboBox layoutX="181.0" layoutY="200.0" prefHeight="26.0" prefWidth="90.0" promptText="Quantity">
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+               <String fx:value="1" />
+               <String fx:value="2" />
+               <String fx:value="3" />
+               <String fx:value="4" />
+               <String fx:value="5" />
+            </FXCollections>
+         </items>
+      </ComboBox>
+      <Button layoutX="187.0" layoutY="337.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="109.0" text="Add to Order" />
    </children>
 </AnchorPane>
