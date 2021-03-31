@@ -1,5 +1,7 @@
 package sample;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -23,10 +25,6 @@ public class donutController {
     final int CAKE_DONUT = 2;
     final int DONUT_HOLE = 3;
     Order[] newOrder = new Order[4];
-
-    public void setMainController(Controller parent){
-        main = parent;
-    }
 
     public int getType(){
         String type = (String)donutTypeCB.getSelectionModel().getSelectedItem();
@@ -54,4 +52,42 @@ public class donutController {
         System.out.println(test);
     }
 
+    public void pressDonutType(ActionEvent actionEvent) {
+        if(donutTypeCB.getSelectionModel().getSelectedItem().equals("yeast donut")){
+            donutFlavorCB.getItems().add("strawberry");
+            donutFlavorCB.getItems().add("vanilla");
+            donutFlavorCB.getItems().add("chocolate");
+            donutFlavorCB.getItems().remove("carrot");
+            donutFlavorCB.getItems().remove("smores");
+            donutFlavorCB.getItems().remove("mint");
+            donutFlavorCB.getItems().remove("blueberry");
+            donutFlavorCB.getItems().remove("pecan");
+            donutFlavorCB.getItems().remove("cherry");
+        }
+        else if(donutTypeCB.getSelectionModel().getSelectedItem().equals("cake donut")){
+            donutFlavorCB.getItems().add("carrot");
+            donutFlavorCB.getItems().add("smores");
+            donutFlavorCB.getItems().add("mint");
+            donutFlavorCB.getItems().remove("vanilla");
+            donutFlavorCB.getItems().remove("chocolate");
+            donutFlavorCB.getItems().remove("strawberry");
+            donutFlavorCB.getItems().remove("blueberry");
+            donutFlavorCB.getItems().remove("pecan");
+            donutFlavorCB.getItems().remove("cherry");
+        }
+        else{
+            donutFlavorCB.getItems().add("blueberry");
+            donutFlavorCB.getItems().add("pecan");
+            donutFlavorCB.getItems().add("cherry");
+            donutFlavorCB.getItems().remove("vanilla");
+            donutFlavorCB.getItems().remove("chocolate");
+            donutFlavorCB.getItems().remove("strawberry");
+            donutFlavorCB.getItems().remove("carrot");
+            donutFlavorCB.getItems().remove("smores");
+            donutFlavorCB.getItems().remove("mint");
+        }
+    }
+
+    public void setMainController(Controller controller) {
+    }
 }
