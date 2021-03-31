@@ -105,5 +105,35 @@ public class Coffee extends MenuItem implements Customizable{
         }
         return message + "\n";
     }
+
+    @Override
+    public double itemPrice() {
+        double price = 0;
+        switch(size){
+            case SIZE_SHORT:
+                price = SHORT_PRICE + addOnPrice();
+                break;
+            case SIZE_TALL:
+                price = TALL_PRICE + addOnPrice();
+                break;
+            case SIZE_GRANDE:
+                price =  GRANDE_PRICE + addOnPrice();
+                break;
+            case SIZE_VENTI:
+                price = VENTI_PRICE + addOnPrice();
+            default: price = 0;
+        }
+        return price * quantity;
+    }
+
+    public double addOnPrice() {
+        int j = 0;
+        for (int i = 0; i < addOns.length; i++) {
+            if (addOns[i] != null) {
+                j++;
+            }
+        }
+        return j*ADDON_COST;
+    }
 }
 
