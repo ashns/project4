@@ -32,11 +32,11 @@ public class donutController {
 
 
     public int getType(){
-        String type = (String)donutTypeCB.getSelectionModel().getSelectedItem();
-        if(type=="yeast"){
+        String type = donutTypeCB.getSelectionModel().getSelectedItem().toString();
+        if(type=="yeast donut"){
             return YEAST_DONUT;
         }
-        else if(type=="cake"){
+        else if(type=="cake donut"){
             return CAKE_DONUT;
         }
         else{
@@ -50,7 +50,8 @@ public class donutController {
         int quantity = (int)quantitySlider.getValue();
         Donut newDonut = new Donut(quantity, flavor, type);
         main.currentOrder.add(newDonut);
-
+        main.orderNum++;
+        currentListView.getItems().add(newDonut.toString());
     }
     
     public void getInformation(Order orders){
