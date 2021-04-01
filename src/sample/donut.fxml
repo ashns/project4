@@ -32,6 +32,6 @@
             <Image url="@Image/tempDonut.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="returnBTN" layoutX="363.0" layoutY="264.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="166.0" text="Return to Main Menu" />
+      <Button fx:id="returnBTN" layoutX="363.0" layoutY="264.0" mnemonicParsing="false" onAction="#closeWindow" prefHeight="25.0" prefWidth="166.0" text="Return to Main Menu" />
    </children>
 </AnchorPane>

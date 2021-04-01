@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Slider;
+import javafx.stage.Stage;
 
 public class donutController {
     @FXML
@@ -20,6 +21,9 @@ public class donutController {
     public Slider quantitySlider;
     @FXML
     public ListView currentListView;
+    @FXML
+    public Button returnBTN;
+
     Controller main = new Controller();
     final int YEAST_DONUT = 1;
     final int CAKE_DONUT = 2;
@@ -90,4 +94,10 @@ public class donutController {
 
     public void setMainController(Controller controller) {
     }
+
+    public void closeWindow(ActionEvent event){
+        Stage closing = (Stage)returnBTN.getScene().getWindow();
+        closing.close();
+    }
+
 }
