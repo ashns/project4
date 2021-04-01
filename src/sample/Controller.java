@@ -28,8 +28,9 @@ public class Controller {
     @FXML
     Label testl = new Label();
 
-    public StoreOrders[] currentStoreOrders = new StoreOrders[4];
-    public Order[] currentOrder = new Order[4];
+    public StoreOrders currentStoreOrders = new StoreOrders();
+    public Order currentOrder = new Order();
+    public int orderNum = 0;
 
     String test = "hello!";
 
@@ -40,10 +41,11 @@ public class Controller {
             Stage stage = new Stage();
             stage.setTitle("Order donut");
             stage.setScene(new Scene(root1));
-            stage.show();
-            donutController sub = new donutController();
+            donutController sub = fxmlLoader.getController();
             sub.setMainController(this);
-            sub.getInformation(currentOrder, test);
+            sub.getInformation(currentOrder);
+            stage.show();
+
         } catch(Exception e) {
             e.printStackTrace();
         }

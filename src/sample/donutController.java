@@ -24,11 +24,12 @@ public class donutController {
     @FXML
     public Button returnBTN;
 
-    Controller main = new Controller();
+    Controller main;
     final int YEAST_DONUT = 1;
     final int CAKE_DONUT = 2;
     final int DONUT_HOLE = 3;
-    Order[] newOrder = new Order[4];
+    private Order newOrder = new Order();
+
 
     public int getType(){
         String type = (String)donutTypeCB.getSelectionModel().getSelectedItem();
@@ -48,13 +49,13 @@ public class donutController {
         int type = getType();
         int quantity = (int)quantitySlider.getValue();
         Donut newDonut = new Donut(quantity, flavor, type);
-        newOrder[0].add(newDonut);
+        main.currentOrder.add(newDonut);
 
     }
     
-    public void getInformation(Order[] orders, String test){
+    public void getInformation(Order orders){
         this.newOrder = orders;
-        System.out.println(test);
+
     }
 
     public void pressDonutType(ActionEvent actionEvent) {
@@ -98,6 +99,7 @@ public class donutController {
     }
 
     public void setMainController(Controller controller) {
+        main = controller;
     }
 
     public void closeWindow(ActionEvent event){
