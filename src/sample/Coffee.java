@@ -19,7 +19,7 @@ public class Coffee extends MenuItem implements Customizable{
     final int WHIPPED_CREME = 4;
 
     int size;
-    String[] addOns;
+    String[] addOns = new String[5];
 
     public Coffee(int size, int quantity) {
         super(quantity);
@@ -97,6 +97,7 @@ public class Coffee extends MenuItem implements Customizable{
             } else {
                 if (hasAddOns == false) {
                     tempMessage += " with " + addOns[i];
+                    hasAddOns=true;
                 } else {
                     tempMessage += ", " + addOns[i];
                 }

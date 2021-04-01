@@ -17,7 +17,7 @@
             <Image url="@Image/tempCoffee.jpg" />
          </image>
       </ImageView>
-      <ListView layoutX="337.0" layoutY="23.0" prefHeight="363.0" prefWidth="252.0" />
+      <ListView fx:id="coffeeLW" layoutX="337.0" layoutY="23.0" prefHeight="363.0" prefWidth="252.0" />
       <CheckBox fx:id="creamCB" layoutX="37.0" layoutY="247.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="82.0" text="Cream" />
       <ComboBox fx:id="sizeCB" layoutX="21.0" layoutY="200.0" prefWidth="150.0" promptText="Select a Size">
          <items>

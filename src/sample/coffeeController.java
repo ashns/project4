@@ -1,9 +1,11 @@
 package sample;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 
@@ -26,6 +28,8 @@ public class coffeeController {
     public ComboBox quantityCB;
     @FXML
     public Button orderBTN;
+    @FXML
+    public ListView coffeeLW;
     int size;
     int quantity;
     String[] addOns = new String[4];
@@ -49,22 +53,23 @@ public class coffeeController {
             size = 4;
         }
 
-        quantity = (int) quantityCB.getSelectionModel().getSelectedItem();
+        quantity = Integer.parseInt((String) quantityCB.getSelectionModel().getSelectedItem());
         Coffee newCoffee = new Coffee(size, quantity);
         if(creamCB.isSelected()){
             newCoffee.add("cream");
         }
-        else if(syrupCB.isSelected()){
+        if(syrupCB.isSelected()){
             newCoffee.add("syrup");
         }
-        else if(milkCB.isSelected()){
+        if(milkCB.isSelected()){
             newCoffee.add("milk");
         }
-        else if(caramelCB.isSelected()){
+        if(caramelCB.isSelected()){
             newCoffee.add("caramel");
         }
-        else{
+        if(whippedCB.isSelected()){
             newCoffee.add("whipped creme");
         }
+    coffeeLW.getItems().add(newCoffee.toString());
     }
 }
