@@ -28,7 +28,8 @@ public class donutController {
     final int YEAST_DONUT = 1;
     final int CAKE_DONUT = 2;
     final int DONUT_HOLE = 3;
-    Order[] newOrder = new Order[4];
+    private Order[] newOrder = new Order[4];
+    private int orderNumber;
 
     public int getType(){
         String type = (String)donutTypeCB.getSelectionModel().getSelectedItem();
@@ -48,13 +49,15 @@ public class donutController {
         int type = getType();
         int quantity = (int)quantitySlider.getValue();
         Donut newDonut = new Donut(quantity, flavor, type);
-        newOrder[0].add(newDonut);
-
+        newOrder[orderNumber].add(newDonut);
+        orderNumber++;
+        closeWindow(actionEvent);
     }
     
-    public void getInformation(Order[] orders, String test){
+    public void getInformation(Order[] orders, int orderNum){
         this.newOrder = orders;
-        System.out.println(test);
+        orderNumber = orderNum;
+
     }
 
     public void pressDonutType(ActionEvent actionEvent) {
