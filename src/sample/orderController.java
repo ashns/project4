@@ -9,9 +9,15 @@ public class orderController {
     @FXML
     public Button returnBTN;
 
+    Controller main;
+
     public void closeWindow(ActionEvent event){
         Stage closing = (Stage)returnBTN.getScene().getWindow();
         closing.close();
+    }
+
+    public void setMainController(Controller controller){
+        main = controller;
     }
 
 }
