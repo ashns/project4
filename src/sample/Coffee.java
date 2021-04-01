@@ -21,10 +21,10 @@ public class Coffee extends MenuItem implements Customizable{
     int size;
     String[] addOns;
 
-    public Coffee(int size, int quantity, String addOns[]) {
+    public Coffee(int size, int quantity) {
         super(quantity);
         this.size = size;
-        this.addOns = addOns;
+        //this.addOns = addOns;
     }
 
     @Override
