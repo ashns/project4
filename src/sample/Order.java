@@ -69,6 +69,10 @@ public class Order implements Customizable{
         return order;
     }
 
+    public MenuItem[] getItems(){
+        return items;
+    }
+
     public double orderPrice(){
         double price = 0;
         for(int i = 0; i < itemCount; i++){

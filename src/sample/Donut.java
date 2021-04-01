@@ -60,7 +60,7 @@ public class Donut extends MenuItem{
 
     @Override
     public String toString(){
-        String message = "(" + quantity + ") " + flavor + " " ;
+        String message = super.toString() + flavor + " " ;
         switch (donutType){
             case YEAST_DONUT:
                 message += "yeast donut";
