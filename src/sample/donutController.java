@@ -50,7 +50,6 @@ public class donutController {
         int quantity = (int)quantitySlider.getValue();
         Donut newDonut = new Donut(quantity, flavor, type);
         main.currentOrder.add(newDonut);
-        main.orderNum++;
         currentListView.getItems().add(newDonut.toString());
     }
     
