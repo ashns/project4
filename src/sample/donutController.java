@@ -33,10 +33,10 @@ public class donutController {
 
     public int getType(){
         String type = donutTypeCB.getSelectionModel().getSelectedItem().toString();
-        if(type=="yeast donut"){
+        if(type.equals("yeast donut")){
             return YEAST_DONUT;
         }
-        else if(type=="cake donut"){
+        else if(type.equals("cake donut")){
             return CAKE_DONUT;
         }
         else{
