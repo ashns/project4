@@ -57,7 +57,9 @@ public class Controller {
             Parent root1 = (Parent)fxmlLoader.load();
             Stage stage = new Stage();
             stage.setTitle("Order Coffee");
-            stage.setScene(new Scene(root1, 600, 400));
+            donutController sub = fxmlLoader.getController();
+            sub.setMainController(this);
+            sub.getInformation(currentOrder);
             stage.show();
         } catch(Exception e) {
             e.printStackTrace();
@@ -71,6 +73,9 @@ public class Controller {
             Parent root1 = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage.setScene(new Scene(root1));
+            coffeeController sub = fxmlLoader.getController();
+            sub.setMainController(this);
+            sub.getInformation(currentOrder);
             stage.show();
         } catch(Exception e) {
             e.printStackTrace();

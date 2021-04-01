@@ -33,6 +33,8 @@ public class coffeeController {
     int size;
     int quantity;
     String[] addOns = new String[4];
+    Controller main;
+    public Order currentOrder = new Order();
 
     public void closeWindow(ActionEvent event){
         Stage closing = (Stage)returnBTN.getScene().getWindow();
@@ -70,6 +72,13 @@ public class coffeeController {
         if(whippedCB.isSelected()){
             newCoffee.add("whipped creme");
         }
-    coffeeLW.getItems().add(newCoffee.toString());
+        coffeeLW.getItems().add(newCoffee.toString());
+        main.currentOrder.add(newCoffee);
+    }
+    public void getInformation(Order orders){
+        this.currentOrder = orders;
+    }
+    public void setMainController(Controller controller) {
+        main = controller;
     }
 }
