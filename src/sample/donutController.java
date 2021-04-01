@@ -51,7 +51,7 @@ public class donutController {
         Donut newDonut = new Donut(quantity, flavor, type);
         newOrder[orderNumber].add(newDonut);
         orderNumber++;
-        closeWindow(actionEvent);
+        
     }
     
     public void getInformation(Order[] orders, int orderNum){
