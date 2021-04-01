@@ -18,8 +18,8 @@
          </image>
       </ImageView>
       <ListView layoutX="337.0" layoutY="23.0" prefHeight="363.0" prefWidth="252.0" />
-      <CheckBox layoutX="37.0" layoutY="247.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="82.0" text="Cream" />
-      <ComboBox layoutX="21.0" layoutY="200.0" prefWidth="150.0" promptText="Select a Size">
+      <CheckBox fx:id="creamCB" layoutX="37.0" layoutY="247.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="82.0" text="Cream" />
+      <ComboBox fx:id="sizeCB" layoutX="21.0" layoutY="200.0" prefWidth="150.0" promptText="Select a Size">
          <items>
          <FXCollections fx:factory="observableArrayList">
             <String fx:value="Short" />
@@ -28,11 +28,11 @@
             <String fx:value="Venti" />
          </FXCollections>
       </items></ComboBox>
-      <CheckBox layoutX="37.0" layoutY="276.0" mnemonicParsing="false" text="Syrup" />
-      <CheckBox layoutX="37.0" layoutY="304.0" mnemonicParsing="false" text="Milk" />
-      <CheckBox layoutX="37.0" layoutY="332.0" mnemonicParsing="false" text="Caramel" />
-      <CheckBox layoutX="127.0" layoutY="247.0" mnemonicParsing="false" text="Whipped Creme" />
-      <ComboBox layoutX="181.0" layoutY="200.0" prefHeight="26.0" prefWidth="90.0" promptText="Quantity">
+      <CheckBox fx:id="syrupCB" layoutX="37.0" layoutY="276.0" mnemonicParsing="false" text="Syrup" />
+      <CheckBox fx:id="milkCB" layoutX="37.0" layoutY="304.0" mnemonicParsing="false" text="Milk" />
+      <CheckBox fx:id="caramelCB" layoutX="37.0" layoutY="332.0" mnemonicParsing="false" text="Caramel" />
+      <CheckBox fx:id="whippedCB" layoutX="127.0" layoutY="247.0" mnemonicParsing="false" text="Whipped Creme" />
+      <ComboBox fx:id="quantityCB" layoutX="181.0" layoutY="200.0" prefHeight="26.0" prefWidth="90.0" promptText="Quantity">
          <items>
             <FXCollections fx:factory="observableArrayList">
                <String fx:value="1" />
@@ -43,7 +43,7 @@
             </FXCollections>
          </items>
       </ComboBox>
-      <Button layoutX="181.0" layoutY="308.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="109.0" text="Add to Order" />
+      <Button fx:id="orderBTN" onAction="#pressOrder" layoutX="181.0" layoutY="308.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="109.0" text="Add to Order" />
       <Button fx:id="returnBTN" layoutX="181.0" layoutY="341.0" mnemonicParsing="false" onAction="#closeWindow" prefHeight="26.0" prefWidth="109.0" text="Return to Main" />
    </children>
 </AnchorPane>

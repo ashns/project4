@@ -48,6 +48,7 @@ public class donutController {
         int type = getType();
         int quantity = (int)quantitySlider.getValue();
         Donut newDonut = new Donut(quantity, flavor, type);
+        newOrder[0].add(newDonut);
 
     }
     
@@ -67,6 +68,7 @@ public class donutController {
             donutFlavorCB.getItems().remove("blueberry");
             donutFlavorCB.getItems().remove("pecan");
             donutFlavorCB.getItems().remove("cherry");
+
         }
         else if(donutTypeCB.getSelectionModel().getSelectedItem().equals("cake donut")){
             donutFlavorCB.getItems().add("carrot");
@@ -78,6 +80,7 @@ public class donutController {
             donutFlavorCB.getItems().remove("blueberry");
             donutFlavorCB.getItems().remove("pecan");
             donutFlavorCB.getItems().remove("cherry");
+
         }
         else{
             donutFlavorCB.getItems().add("blueberry");
@@ -90,6 +93,8 @@ public class donutController {
             donutFlavorCB.getItems().remove("smores");
             donutFlavorCB.getItems().remove("mint");
         }
+        donutFlavorCB.setValue(null);
+
     }
 
     public void setMainController(Controller controller) {
