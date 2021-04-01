@@ -39,7 +39,7 @@ public class Controller {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("donut.fxml"));
             Parent root1 = fxmlLoader.load();
             Stage stage = new Stage();
-            stage.setTitle("Order donut");
+            stage.setTitle("Order Donut");
             stage.setScene(new Scene(root1));
             donutController sub = fxmlLoader.getController();
             sub.setMainController(this);
@@ -57,6 +57,7 @@ public class Controller {
             Parent root1 = (Parent)fxmlLoader.load();
             Stage stage = new Stage();
             stage.setTitle("Order Coffee");
+            stage.setScene(new Scene(root1));
             coffeeController sub = fxmlLoader.getController();
             sub.setMainController(this);
             sub.getInformation(currentOrder);
