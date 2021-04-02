@@ -34,7 +34,7 @@ public class storeOrderController {
     }
 
     public void pressRemove(ActionEvent actionEvent) {
-        main.currentStoreOrders.searchByNum()
+       // main.currentStoreOrders.searchByNum()
     }
 
 
