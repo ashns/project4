@@ -17,14 +17,14 @@ public class orderController {
     public ListView orderListView;
 
     Controller main;
+    private MenuItem current[];
 
     public void removeItem(ActionEvent event){
-        int index = orderListView.getSelectionModel().getSelectedIndex();
-        System.out.println(index);
+
+
     }
 
     public void placeOrder(ActionEvent event){
-
         main.currentStoreOrders.add(main.currentOrder);
         main.currentOrder = new Order();
         main.currentOrder.setNumber();
@@ -44,7 +44,7 @@ public class orderController {
 
     public void displayOrder(){
         orderListView.getItems().removeAll();
-        MenuItem current[] = main.currentOrder.getItems();
+        current = main.currentOrder.getItems();
         for(int i = 0; i < current.length; i++){
             if(current[i] != null)
                 orderListView.getItems().add(current[i]);

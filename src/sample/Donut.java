@@ -80,12 +80,14 @@ public class Donut extends MenuItem{
 
     @Override
     public boolean equals(Object obj){
-
-        Donut compare = (Donut) obj;
-        if(super.equals(compare)) {
-            if (compare.getDonutType() == donutType && compare.getFlavor().equals(flavor))
-                return true;
-            else return false;
+        if(obj != null && !(obj instanceof Coffee)) {
+            Donut compare = (Donut) obj;
+            if (super.equals(compare)) {
+                if (compare.getDonutType() == donutType && compare.getFlavor().equals(flavor))
+                    return true;
+                else return false;
+            } else
+                return false;
         }
         else
             return false;

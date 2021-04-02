@@ -136,5 +136,28 @@ public class Coffee extends MenuItem implements Customizable{
         }
         return j*ADDON_COST;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj != null && !(obj instanceof Donut)){
+            Coffee compare = (Coffee) obj;
+            if(super.equals(compare)){
+                if(size == compare.size){
+                    for(int i = 0; i <= WHIPPED_CREME; i++){
+                        if (addOns[i] != null && compare.addOns[i] != null) {
+                            if (!addOns[i].equals(compare.addOns[i])) {
+                                return false;
+                            }
+                        }
+                        else return false;
+                    }
+                    return true;
+                }
+                else return false;
+            }
+            else return false;
+        }
+        else return false;
+    }
 }
 
