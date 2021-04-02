@@ -45,8 +45,7 @@ public class donutController {
 
     public void pressOrderBTN(ActionEvent actionEvent) {
         try {
-            String flavor = (String) donutFlavorCB.getSelectionModel().getSelectedItem();
-
+            String flavor = donutFlavorCB.getSelectionModel().getSelectedItem().toString();
             int type = getType();
             int quantity = (int) quantitySlider.getValue();
             Donut newDonut = new Donut(quantity, flavor, type);
