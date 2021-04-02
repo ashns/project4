@@ -87,6 +87,8 @@ public class Controller {
             Parent root1 = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage.setScene(new Scene(root1));
+            storeOrderController sub = fxmlLoader.getController();
+            sub.setMainController(this);
             stage.show();
         } catch(Exception e) {
             e.printStackTrace();

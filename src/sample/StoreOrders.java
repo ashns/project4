@@ -23,6 +23,15 @@ public class StoreOrders implements Customizable{
         return NOT_FOUND;
     }
 
+    private int searchByNum(int orderNumber){
+        for(int i = 0; i < orderCount; i++){
+            if(orders[i].getNumber().equals(orderNumber)){
+                return i;
+            }
+        }
+        return NOT_FOUND;
+    }
+
     @Override
     public boolean add(Object obj) {
         if(orderCount <= orders.length){
@@ -57,5 +66,9 @@ public class StoreOrders implements Customizable{
             order += orders[i].toString();
         }
         return order;
+    }
+
+    public Order[] getOrders(){
+        return orders;
     }
 }

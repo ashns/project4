@@ -8,7 +8,9 @@ public class Order implements Customizable{
     private MenuItem items[] = new MenuItem[4];
     private int itemCount = 0;
     DecimalFormat usd = new DecimalFormat("#.##");
-
+    private final int SERIAL_START = 1;
+    private static int lastNumber;
+    private String number;
 
     private void grow(){
         MenuItem newItem[] = new MenuItem[items.length+4];
@@ -16,6 +18,21 @@ public class Order implements Customizable{
             newItem[i] = items[i];
         }
         items = newItem;
+    }
+
+    public void setNumber()
+    {
+        if(lastNumber == 0)
+        {
+            lastNumber = SERIAL_START;
+        }
+        this.number = Integer.toString(lastNumber++);
+        return;
+    }
+
+    public String getNumber()
+    {
+        return this.number;
     }
 
     private int search(Object obj){

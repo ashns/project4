@@ -4,11 +4,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.ListView;
-import javafx.scene.control.Slider;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
+
+import java.lang.reflect.InvocationTargetException;
 
 public class donutController {
     @FXML
@@ -45,12 +44,19 @@ public class donutController {
     }
 
     public void pressOrderBTN(ActionEvent actionEvent) {
-        String flavor = (String)donutFlavorCB.getSelectionModel().getSelectedItem();
-        int type = getType();
-        int quantity = (int)quantitySlider.getValue();
-        Donut newDonut = new Donut(quantity, flavor, type);
-        main.currentOrder.add(newDonut);
-        currentListView.getItems().add(newDonut.toString());
+        try {
+            String flavor = (String) donutFlavorCB.getSelectionModel().getSelectedItem();
+
+            int type = getType();
+            int quantity = (int) quantitySlider.getValue();
+            Donut newDonut = new Donut(quantity, flavor, type);
+            main.currentOrder.add(newDonut);
+            currentListView.getItems().add(newDonut.toString());
+        }catch(Exception e) {
+            Alert nullValues = new Alert(Alert.AlertType.ERROR, "Please enter valid donut type or flavor.");
+            nullValues.setTitle("Error");
+            nullValues.show();
+        }
     }
     
     public void getInformation(Order orders){
