@@ -77,6 +77,19 @@ public class Order implements Customizable{
         return false;
     }
 
+    public boolean remove(int index){
+        if(index < itemCount){
+            for(int i = index; i < itemCount; i++){
+                items[i] = items[i+1];
+            }
+            items[itemCount] = null;
+            itemCount--;
+            return true;
+        }
+        else
+            return false;
+    }
+
     public String print(){
         String order = "";
         for(int i = 0; i <= itemCount; i++){
