@@ -46,7 +46,7 @@ public class Order implements Customizable{
 
     @Override
     public boolean add(Object obj){
-        if(items.length == itemCount){
+        if(items.length == itemCount+1){
             grow();
         }
         if(obj instanceof Donut || obj instanceof Coffee){

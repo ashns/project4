@@ -22,7 +22,7 @@ public class orderController {
     public void removeItem(ActionEvent event){
         int index = orderListView.getSelectionModel().getSelectedIndex();
         main.currentOrder.remove(index);
-        displayOrder();
+        orderListView.getItems().remove(index);
     }
 
     public void placeOrder(ActionEvent event){
@@ -44,12 +44,6 @@ public class orderController {
     }
 
     public void displayOrder(){
-
-        if(current != null) {
-            for (int i = 0; i < current.length + 1; i++) {
-                orderListView.getItems().remove(i);
-            }
-        }
         current = main.currentOrder.getItems();
         for(int i = 0; i < current.length; i++){
             if(current[i] != null)
