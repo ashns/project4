@@ -17,7 +17,6 @@ import java.text.DecimalFormat;
  * displayOrder
  * Provides accessor methods: getInformation
  * @author Ashley Stankovits, Matthew Walker
- *
  */
 public class coffeeController {
     @FXML
