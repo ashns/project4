@@ -38,15 +38,14 @@ public class storeOrderController {
         Order currentOrders[] = main.currentStoreOrders.getOrders();
         for(int i = 0; i < currentOrders.length; i++){
             if(currentOrders[i] != null && currentOrders[i].getNumber() != null)
-                ordersListView.getItems().add("Order #" + currentOrders[i].getNumber());
+                ordersListView.getItems().add("Order #" + currentOrders[i].getNumber() + "\n" + currentOrders[i].print());
         }
     }
 
     public void pressRemove(ActionEvent actionEvent) {
         int index = ordersListView.getSelectionModel().getSelectedIndex();
         main.currentStoreOrders.remove(index);
-        ordersListView.getItems().removeAll();
-        displayOrder();
+        ordersListView.getItems().remove(index);
     }
 
 

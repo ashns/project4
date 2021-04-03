@@ -92,7 +92,7 @@ public class Order implements Customizable{
 
     public String print(){
         String order = "";
-        for(int i = 0; i <= itemCount; i++){
+        for(int i = 0; i < itemCount; i++){
             order += items[i].toString();
         }
         order += "\n---------------\nTotal Price: $" + usd.format(orderPrice()) + "\n";
