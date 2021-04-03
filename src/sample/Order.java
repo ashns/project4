@@ -109,7 +109,7 @@ public class Order implements Customizable{
     }
 
     /**
-     * This method removed an object from the items array based
+     * This method removes an object from the items array based
      * on the index it is located at rather than searching for the
      * equivalent object.
      * @param index which is where in the array the object is located.

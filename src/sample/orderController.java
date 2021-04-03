@@ -1,5 +1,4 @@
 package sample;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -8,6 +7,13 @@ import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 import java.text.DecimalFormat;
 
+/**
+ * The controller class responds to all input from the user order UI with appropriate
+ * calls to methods in other classes.
+ * Provides client methods: removeItem, placeOrder, closeWindow, setMainController,
+ * displayOrder, updatePrice
+ * @author Ashley Stankovits, Matthew Walker
+ */
 public class orderController {
     @FXML
     public Button returnBTN;
@@ -19,11 +25,15 @@ public class orderController {
     public ListView orderListView;
     @FXML
     public Label priceLabel;
-
     Controller main;
     private MenuItem current[];
     DecimalFormat usd = new DecimalFormat("#.##");
 
+    /**
+     * This method removes an item from the order when the user clicks
+     * the corresponding button and then updates the ListView as appropriate.
+     * @param event which is the user clicking the "remove" button.
+     */
     public void removeItem(ActionEvent event){
         int index = orderListView.getSelectionModel().getSelectedIndex();
         main.currentOrder.remove(index);
@@ -31,6 +41,11 @@ public class orderController {
         updatePrice();
     }
 
+    /**
+     * This method places the users order and pushes it to storeOrders when
+     * the appropriate button is clicked.
+     * @param event which is the user clicking the "place order" button.
+     */
     public void placeOrder(ActionEvent event){
         main.currentStoreOrders.add(main.currentOrder);
         main.currentOrder.updateNumber();
@@ -38,16 +53,32 @@ public class orderController {
         closeWindow(event);
     }
 
+    /**
+     * This method closes the user orders window when the appropriate button
+     * is pressed.
+     * @param event which is the user clicking the "return to main menu" button.
+     */
     public void closeWindow(ActionEvent event){
         Stage closing = (Stage)returnBTN.getScene().getWindow();
         closing.close();
     }
 
+    /**
+     * This method sets the main controller when this controller is initiated
+     * and updates the ListView with appropriate information from the main
+     * controller.
+     * @param controller which is the main controller used to instantiate this
+     *                   controller.
+     */
     public void setMainController(Controller controller){
         main = controller;
         displayOrder();
     }
 
+    /**
+     * This method is used when the donut fxml is initialized to update
+     * the ListView to contain up to date order information.
+     */
     public void displayOrder(){
         current = main.currentOrder.getItems();
         for(int i = 0; i < current.length; i++){
@@ -57,6 +88,10 @@ public class orderController {
         updatePrice();
     }
 
+    /**
+     * This method updates the total price area on the screen
+     * based on the menu items from the ListView.
+     */
     public void updatePrice(){
         priceLabel.setText("Total: $" + usd.format(main.currentOrder.orderPrice()));
     }
