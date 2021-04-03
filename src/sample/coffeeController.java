@@ -161,6 +161,9 @@ public class coffeeController {
         updatePrice();
     }
 
+    /**
+     * Updates the price displayed to that of the current order.
+     */
     public void updatePrice(){
         priceLabel.setText("Total: $" + usd.format(main.currentOrder.orderPrice()));
     }
