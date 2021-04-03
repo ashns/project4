@@ -27,6 +27,16 @@ public class Order implements Customizable{
         items = newItem;
     }
 
+
+    /**
+     * This method returns the current number of items.
+     * @return int with the current number of items.
+     */
+    public int getItemCount(){
+        return itemCount;
+    }
+
+
     /**
      * This method returns the order number.
      * @return int which contains the order number.

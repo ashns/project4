@@ -2,6 +2,7 @@ package sample;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -20,6 +21,7 @@ public class orderController {
     @FXML
     public Label priceLabel;
 
+
     Controller main;
     private MenuItem current[];
     DecimalFormat usd = new DecimalFormat("#.##");
@@ -32,10 +34,16 @@ public class orderController {
     }
 
     public void placeOrder(ActionEvent event){
+        if(main.currentOrder.getItemCount() > 0){
         main.currentStoreOrders.add(main.currentOrder);
         main.currentOrder.updateNumber();
         main.currentOrder = new Order();
-        closeWindow(event);
+        closeWindow(event);}
+        else{
+            Alert nullValues = new Alert(Alert.AlertType.ERROR, "Cannot place an empty order");
+            nullValues.setTitle("Error");
+            nullValues.show();
+        }
     }
 
     public void closeWindow(ActionEvent event){
