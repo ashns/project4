@@ -6,7 +6,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import java.text.DecimalFormat;
 
 /**
  * The controller class responds to all input from the coffee UI with appropriate
@@ -39,11 +41,15 @@ public class coffeeController {
     public ListView coffeeLW;
     @FXML
     public Button removeBTN;
+    @FXML
+    public Label priceLabel;
+
     int size;
     int quantity;
     Controller main;
     public Order currentOrder = new Order();
     private MenuItem current[];
+    DecimalFormat usd = new DecimalFormat("#.##");
 
     /**
      * The method closes the coffee gui when the user clicks
@@ -93,6 +99,7 @@ public class coffeeController {
 
             main.currentOrder.add(newCoffee);
             coffeeLW.getItems().add(newCoffee);
+            updatePrice();
 
         }catch(Exception e){
             Alert nullValues = new Alert(Alert.AlertType.ERROR, "Please enter valid coffee quantity and size");
@@ -124,6 +131,7 @@ public class coffeeController {
         int index = coffeeLW.getSelectionModel().getSelectedIndex();
         main.currentOrder.remove(index);
         coffeeLW.getItems().remove(index);
+        updatePrice();
     }
 
     /**
@@ -136,5 +144,10 @@ public class coffeeController {
             if(current[i] != null)
                 coffeeLW.getItems().add(current[i]);
         }
+        updatePrice();
+    }
+
+    public void updatePrice(){
+        priceLabel.setText("Total: $" + usd.format(main.currentOrder.orderPrice()));
     }
 }

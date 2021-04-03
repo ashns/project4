@@ -40,10 +40,10 @@ public class donutController {
 
     public int getType(){
         String type = donutTypeCB.getSelectionModel().getSelectedItem().toString();
-        if(type.equals("yeast donut")){
+        if(type.equals("Yeast donut")){
             return YEAST_DONUT;
         }
-        else if(type.equals("cake donut")){
+        else if(type.equals("Cake donut")){
             return CAKE_DONUT;
         }
         else{
@@ -74,7 +74,7 @@ public class donutController {
     }
 
     public void pressDonutType(ActionEvent actionEvent) {
-        if(donutTypeCB.getSelectionModel().getSelectedItem().equals("yeast donut")){
+        if(donutTypeCB.getSelectionModel().getSelectedItem().equals("Yeast donut")){
             donutFlavorCB.getItems().add("Strawberry");
             donutFlavorCB.getItems().add("Vanilla");
             donutFlavorCB.getItems().add("Chocolate");
@@ -86,7 +86,7 @@ public class donutController {
             donutFlavorCB.getItems().remove("Cherry");
 
         }
-        else if(donutTypeCB.getSelectionModel().getSelectedItem().equals("cake donut")){
+        else if(donutTypeCB.getSelectionModel().getSelectedItem().equals("Cake donut")){
             donutFlavorCB.getItems().add("Carrot");
             donutFlavorCB.getItems().add("Smores");
             donutFlavorCB.getItems().add("Mint");
