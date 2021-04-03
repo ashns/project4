@@ -6,7 +6,7 @@ package sample;
  * Provides default constructor for creating instances
  * Provides client methods: toString, equals, add, remove, itemprice,
  * addonprice
- *  * @author Ashley Stankovits, Matthew Walker
+ * @author Ashley Stankovits, Matthew Walker
  */
 public class Coffee extends MenuItem implements Customizable{
 
