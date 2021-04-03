@@ -28,6 +28,7 @@ public class orderController {
         int index = orderListView.getSelectionModel().getSelectedIndex();
         main.currentOrder.remove(index);
         orderListView.getItems().remove(index);
+        updatePrice();
     }
 
     public void placeOrder(ActionEvent event){
@@ -54,6 +55,10 @@ public class orderController {
             if(current[i] != null)
                 orderListView.getItems().add(current[i]);
         }
+        updatePrice();
+    }
+
+    public void updatePrice(){
         priceLabel.setText("Total: $" + usd.format(main.currentOrder.orderPrice()));
     }
 
