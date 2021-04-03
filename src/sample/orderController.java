@@ -26,6 +26,7 @@ public class orderController {
     public ListView orderListView;
     @FXML
     public Label priceLabel;
+
     Controller main;
     private MenuItem current[];
     DecimalFormat usd = new DecimalFormat("#.##");
@@ -114,7 +115,10 @@ public class orderController {
      * based on the menu items from the ListView.
      */
     public void updatePrice(){
-        priceLabel.setText("Total: $" + usd.format(main.currentOrder.orderPrice()));
+        priceLabel.setText("Subtotal: $" + usd.format(main.currentOrder.orderPrice()));
+        //tax.setText("Sales Tax: $" + usd.format(main.currentOrder.calculateSalesTax()));
+        //total.setText("Total: $" + usd.format(main.currentOrder.calculateSalesTax()
+        //      + main.currentOrder.orderPrice()));
     }
 
 }

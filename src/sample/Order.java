@@ -10,12 +10,14 @@ import java.text.DecimalFormat;
 public class Order implements Customizable{
 
     final int NOT_FOUND = -1;
+    final double SALES_TAX = 0.06625;
     private MenuItem items[] = new MenuItem[4];
     private int itemCount = 0;
     DecimalFormat usd = new DecimalFormat("#.##");
     private static int number = 0;
     private int thisNumber = number+1;
     private final double NJ_TAX = 1.06625;
+
 
     /**
      * This method grows the items array when it hits capacity.
@@ -174,5 +176,13 @@ public class Order implements Customizable{
             price += items[i].itemPrice();
         }
         return price;
+    }
+
+    /**
+     * Calculates the amount of money added via sales tax
+     * @return the total taxed amount
+     */
+    public double calculateSalesTax(){
+        return orderPrice() * SALES_TAX;
     }
 }
