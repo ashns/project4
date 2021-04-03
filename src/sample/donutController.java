@@ -1,7 +1,12 @@
 package sample;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
+import javafx.scene.control.Slider;
+import javafx.scene.control.Label;
+import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 
 
@@ -70,39 +75,39 @@ public class donutController {
 
     public void pressDonutType(ActionEvent actionEvent) {
         if(donutTypeCB.getSelectionModel().getSelectedItem().equals("yeast donut")){
-            donutFlavorCB.getItems().add("strawberry");
-            donutFlavorCB.getItems().add("vanilla");
-            donutFlavorCB.getItems().add("chocolate");
-            donutFlavorCB.getItems().remove("carrot");
-            donutFlavorCB.getItems().remove("smores");
-            donutFlavorCB.getItems().remove("mint");
-            donutFlavorCB.getItems().remove("blueberry");
-            donutFlavorCB.getItems().remove("pecan");
-            donutFlavorCB.getItems().remove("cherry");
+            donutFlavorCB.getItems().add("Strawberry");
+            donutFlavorCB.getItems().add("Vanilla");
+            donutFlavorCB.getItems().add("Chocolate");
+            donutFlavorCB.getItems().remove("Carrot");
+            donutFlavorCB.getItems().remove("Smores");
+            donutFlavorCB.getItems().remove("Mint");
+            donutFlavorCB.getItems().remove("Blueberry");
+            donutFlavorCB.getItems().remove("Pecan");
+            donutFlavorCB.getItems().remove("Cherry");
 
         }
         else if(donutTypeCB.getSelectionModel().getSelectedItem().equals("cake donut")){
-            donutFlavorCB.getItems().add("carrot");
-            donutFlavorCB.getItems().add("smores");
-            donutFlavorCB.getItems().add("mint");
-            donutFlavorCB.getItems().remove("vanilla");
-            donutFlavorCB.getItems().remove("chocolate");
-            donutFlavorCB.getItems().remove("strawberry");
-            donutFlavorCB.getItems().remove("blueberry");
-            donutFlavorCB.getItems().remove("pecan");
-            donutFlavorCB.getItems().remove("cherry");
+            donutFlavorCB.getItems().add("Carrot");
+            donutFlavorCB.getItems().add("Smores");
+            donutFlavorCB.getItems().add("Mint");
+            donutFlavorCB.getItems().remove("Vanilla");
+            donutFlavorCB.getItems().remove("Chocolate");
+            donutFlavorCB.getItems().remove("Strawberry");
+            donutFlavorCB.getItems().remove("Blueberry");
+            donutFlavorCB.getItems().remove("Pecan");
+            donutFlavorCB.getItems().remove("Cherry");
 
         }
         else{
-            donutFlavorCB.getItems().add("blueberry");
-            donutFlavorCB.getItems().add("pecan");
-            donutFlavorCB.getItems().add("cherry");
-            donutFlavorCB.getItems().remove("vanilla");
-            donutFlavorCB.getItems().remove("chocolate");
-            donutFlavorCB.getItems().remove("strawberry");
-            donutFlavorCB.getItems().remove("carrot");
-            donutFlavorCB.getItems().remove("smores");
-            donutFlavorCB.getItems().remove("mint");
+            donutFlavorCB.getItems().add("Blueberry");
+            donutFlavorCB.getItems().add("Pecan");
+            donutFlavorCB.getItems().add("Cherry");
+            donutFlavorCB.getItems().remove("Vanilla");
+            donutFlavorCB.getItems().remove("Chocolate");
+            donutFlavorCB.getItems().remove("Strawberry");
+            donutFlavorCB.getItems().remove("Carrot");
+            donutFlavorCB.getItems().remove("Smores");
+            donutFlavorCB.getItems().remove("Mint");
         }
         donutFlavorCB.setValue(null);
 
