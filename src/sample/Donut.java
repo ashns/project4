@@ -26,7 +26,6 @@ public class Donut extends MenuItem{
      * @param taste which is the flavor of the donut
      * @param type which is the type of donut (yeast, cake, etc)
      */
-
     public Donut(int number, String taste, int type){
         super(number);
         flavor = taste;
