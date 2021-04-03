@@ -27,10 +27,17 @@ public class orderController {
     DecimalFormat usd = new DecimalFormat("#.##");
 
     public void removeItem(ActionEvent event){
-        int index = orderListView.getSelectionModel().getSelectedIndex();
-        main.currentOrder.remove(index);
-        orderListView.getItems().remove(index);
-        updatePrice();
+        try {
+            int index = orderListView.getSelectionModel().getSelectedIndex();
+            main.currentOrder.remove(index);
+            orderListView.getItems().remove(index);
+            updatePrice();
+        }
+        catch (Exception e){
+            Alert nullValues = new Alert(Alert.AlertType.ERROR, "Please select the item to be removed.");
+            nullValues.setTitle("Error");
+            nullValues.show();
+        }
     }
 
     public void placeOrder(ActionEvent event){

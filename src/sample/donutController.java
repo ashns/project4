@@ -159,10 +159,17 @@ public class donutController {
      * @param event which is the user clicking the remove button.
      */
     public void removeItem(ActionEvent event){
-        int index = currentListView.getSelectionModel().getSelectedIndex();
-        main.currentOrder.remove(index);
-        currentListView.getItems().remove(index);
-        updatePrice();
+        try {
+            int index = currentListView.getSelectionModel().getSelectedIndex();
+            main.currentOrder.remove(index);
+            currentListView.getItems().remove(index);
+            updatePrice();
+        }
+        catch (Exception e){
+            Alert nullValues = new Alert(Alert.AlertType.ERROR, "Please select the item to be removed.");
+            nullValues.setTitle("Error");
+            nullValues.show();
+        }
     }
 
     /**
