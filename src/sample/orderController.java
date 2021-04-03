@@ -43,9 +43,16 @@ public class orderController {
             updatePrice();
         }
         catch (Exception e){
-            Alert nullValues = new Alert(Alert.AlertType.ERROR, "Please select the item to be removed.");
-            nullValues.setTitle("Error");
-            nullValues.show();
+            if(main.currentOrder.getItemCount() == 0){
+                Alert nullValues = new Alert(Alert.AlertType.ERROR, "Please add an item to be removed.");
+                nullValues.setTitle("Error");
+                nullValues.show();
+            }
+            else {
+                Alert nullValues = new Alert(Alert.AlertType.ERROR, "Please select the item to be removed.");
+                nullValues.setTitle("Error");
+                nullValues.show();
+            }
         }
     }
 

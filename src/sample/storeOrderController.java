@@ -77,9 +77,16 @@ public class storeOrderController {
             ordersListView.getItems().remove(index);
         }
         catch (Exception e){
-            Alert nullValues = new Alert(Alert.AlertType.ERROR, "Please select the order to be removed.");
-            nullValues.setTitle("Error");
-            nullValues.show();
+            if(main.currentOrder.getItemCount() == 0){
+                Alert nullValues = new Alert(Alert.AlertType.ERROR, "Please add an order to be removed.");
+                nullValues.setTitle("Error");
+                nullValues.show();
+            }
+            else {
+                Alert nullValues = new Alert(Alert.AlertType.ERROR, "Please select the order to be removed.");
+                nullValues.setTitle("Error");
+                nullValues.show();
+            }
         }
     }
 
