@@ -15,7 +15,6 @@ import javafx.stage.Stage;
  * displayOrder
  * Provides accessor methods: getInformation
  * @author Ashley Stankovits, Matthew Walker
- *
  */
 public class coffeeController {
     @FXML

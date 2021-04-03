@@ -1,5 +1,13 @@
 package sample;
 
+/**
+ * This class defines the menu item of type donut to hold all the
+ * donut specific information.
+ * Provides default constructor for creating instances
+ * Provides client methods: itemPrice, toString, equals
+ * Provides accessor methods: getFlavor, getDonutType
+ * @author Ashley Stankovits, Matthew Walker
+ */
 public class Donut extends MenuItem{
 
     final int YEAST_DONUT = 1;
@@ -11,23 +19,22 @@ public class Donut extends MenuItem{
     String flavor;
     int donutType;
 
-    public Donut(){
-        super( 1);
-        flavor = "";
-        donutType = 1;
-    }
-
+    /**
+     * This is the default constructor for instances of donut.
+     * @param number which is the quantity of a specific donut type.
+     * @param taste which is the flavor of the donut
+     * @param type which is the type of donut (yeast, cake, etc)
+     */
     public Donut(int number, String taste, int type){
         super(number);
         flavor = taste;
         donutType = type;
     }
 
-    public void setDonutType(int newType){
-        donutType = newType;
-        itemPrice();
-    }
-
+    /**
+     * This method calculates the price for a specific donut instance.
+     * @return a double which is the calculated price.
+     */
     @Override
     public double itemPrice() {
         double price = 0;
@@ -46,18 +53,29 @@ public class Donut extends MenuItem{
         return price * quantity;
     }
 
-    public void setFlavor(String newFlavor){
-        flavor = newFlavor;
-    }
-
+    /**
+     * This method is a getter for the donut type of an instance
+     * of donut.
+     * @return an int which corresponds to a specific donut type.
+     */
     public int getDonutType(){
         return donutType;
     }
 
+    /**
+     * This method is a getter for the donut flavor of an instance
+     * of donut.
+     * @return a String which contains the donut flavor.
+     */
     public String getFlavor(){
         return flavor;
     }
 
+    /**
+     * This method converts an instance of donut to a string.
+     * @return a string which contains all the information regarding
+     * an instance of donut such as the flavor quantity and type.
+     */
     @Override
     public String toString(){
         String message = super.toString() + flavor + " " ;
@@ -78,6 +96,12 @@ public class Donut extends MenuItem{
         return message + "\n";
     }
 
+    /**
+     * This method checks if two instances of donut are the same.
+     * @param obj which is the donut object being compared.
+     * @return boolean which is true if the two objects are equal
+     * false if otherwise.
+     */
     @Override
     public boolean equals(Object obj){
         if(obj != null && !(obj instanceof Coffee)) {

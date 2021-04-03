@@ -4,8 +4,8 @@ package sample;
  * This class defines the menu item of type coffee to hold all the
  * coffee specific information.
  * Provides default constructor for creating instances
- *  * Provides client methods: toString, equals, add, remove, itemprice,
- *  addonprice
+ * Provides client methods: toString, equals, add, remove, itemprice,
+ * addonprice
  *  * @author Ashley Stankovits, Matthew Walker
  */
 public class Coffee extends MenuItem implements Customizable{

@@ -9,6 +9,12 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import javafx.scene.image.ImageView;
 
+/**
+ * The controller class responds to all input from the main UI with appropriate
+ * calls to methods in other classes.
+ * Provides client methods: pressDonut, pressCoffee, pressOrder, pressStoreOrder
+ * @author Ashley Stankovits, Matthew Walker
+ */
 public class Controller {
 
     @FXML
@@ -28,6 +34,12 @@ public class Controller {
     public Order currentOrder = new Order();
 
 
+    /**
+     * This method opens and initializes the donut gui upon corresponding
+     * button press.
+     * @param event which is the user clicking the donut button.
+     * @throws Exception in case the donut fxml is unable to be loaded.
+     */
     public void pressDonut(ActionEvent event) throws Exception {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("donut.fxml"));
@@ -44,6 +56,12 @@ public class Controller {
         }
     }
 
+    /**
+     * This method opens and initializes the coffee gui upon corresponding
+     * button press.
+     * @param event which is the user clicking the coffee button.
+     * @throws Exception in case the donut fxml is unable to be loaded.
+     */
     public void pressCoffee(ActionEvent event) throws Exception {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("coffee.fxml"));
@@ -59,6 +77,12 @@ public class Controller {
         }
     }
 
+    /**
+     * This method opens and initializes the user order gui upon corresponding
+     * button press.
+     * @param event which is the user clicking the orders button.
+     * @throws Exception in case the order fxml is unable to be loaded.
+     */
     public void pressOrder(ActionEvent event) throws Exception {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("order.fxml"));
@@ -73,6 +97,12 @@ public class Controller {
         }
     }
 
+    /**
+     * This method opens and initializes the storeOrder gui upon corresponding
+     * button press.
+     * @param event which is the user clicking the store orders button.
+     * @throws Exception in case the store order fxml is unable to be loaded.
+     */
     public void pressStoreOrder(ActionEvent event) throws Exception {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("storeOrder.fxml"));
