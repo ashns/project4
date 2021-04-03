@@ -78,6 +78,10 @@ public class Order implements Customizable{
         return false;
     }
 
+    /**
+     * This method updates the order number
+     * to increment appropriately.
+     */
     public void updateNumber(){
         number++;
     }
