@@ -33,7 +33,7 @@ public class orderController {
 
     Controller main;
     private MenuItem current[];
-    DecimalFormat usd = new DecimalFormat("#.##");
+    DecimalFormat usd = new DecimalFormat("0.00");
 
     /**
      * This method removes an item from the order when the user clicks
