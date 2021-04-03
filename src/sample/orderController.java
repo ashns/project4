@@ -3,6 +3,7 @@ package sample;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
@@ -15,6 +16,8 @@ public class orderController {
     public Button placeBTN;
     @FXML
     public ListView orderListView;
+    @FXML
+    public Label priceLabel;
 
     Controller main;
     private MenuItem current[];
@@ -49,6 +52,7 @@ public class orderController {
             if(current[i] != null)
                 orderListView.getItems().add(current[i]);
         }
+        priceLabel.setText("Total: $" + main.currentOrder.orderPrice());
     }
 
 }
