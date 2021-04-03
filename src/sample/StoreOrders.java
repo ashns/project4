@@ -111,7 +111,7 @@ public class StoreOrders implements Customizable{
     public String print(){
         String order = "";
         for(int i = 0; i < orderCount; i++){
-            order += orders[i].print();
+            order += "Order #" + orders[i].getNumber() + "\n" + orders[i].print() + "\n\n";
         }
         return order;
     }
