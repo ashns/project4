@@ -1,5 +1,13 @@
 package sample;
 
+/**
+ * This class defines the menu item of type coffee to hold all the
+ * coffee specific information.
+ * Provides default constructor for creating instances
+ *  * Provides client methods: toString, equals, add, remove, itemprice,
+ *  addonprice
+ *  * @author Ashley Stankovits, Matthew Walker
+ */
 public class Coffee extends MenuItem implements Customizable{
 
     final int SIZE_SHORT = 1;
@@ -21,11 +29,22 @@ public class Coffee extends MenuItem implements Customizable{
     int size;
     String[] addOns = new String[5];
 
+    /**
+     * This method is the constructor for a coffee instance of menuitem
+     * @param size which is the size of the coffee
+     * @param quantity which is the number of this exact type of coffee
+     */
     public Coffee(int size, int quantity) {
         super(quantity);
         this.size = size;
     }
 
+    /**
+     * This method adds a coffee addon to a specific coffee instance
+     * @param obj which is the addon being adding
+     * @return a boolean which returns true of the addon was successfully added
+     * and false otherwise
+     */
     @Override
     public boolean add(Object obj) {
         if(obj instanceof String){
@@ -54,6 +73,12 @@ public class Coffee extends MenuItem implements Customizable{
         return false;
     }
 
+    /**
+     * This method removes an addon from coffee.
+     * @param obj which is the addon being removed
+     * @return a boolean which returns true if the addon was successfully
+     * removed and false if otherwise
+     */
     @Override
     public boolean remove(Object obj) {
         if(obj instanceof String){
@@ -68,6 +93,11 @@ public class Coffee extends MenuItem implements Customizable{
         return false;
     }
 
+    /**
+     * This method converts a coffee instance into a string.
+     * @return a string which contains the coffee quantity, size
+     * and addons
+     */
     @Override
     public String toString(){
         String message = "(" + quantity + ") " + " " ;
@@ -106,6 +136,12 @@ public class Coffee extends MenuItem implements Customizable{
         return message + "\n";
     }
 
+    /**
+     * This method calculates the cost of a specific coffee
+     * based on the size and addons.
+     * @return a double that is the price of this specific
+     * instance of coffee.
+     */
     @Override
     public double itemPrice() {
         double price = 0;
@@ -126,6 +162,11 @@ public class Coffee extends MenuItem implements Customizable{
         return price * quantity;
     }
 
+    /**
+     * This method calculated the cost for addons of a coffee instance.
+     * It is called by the itemPrice method to add this cost to the base cost.
+     * @return a double which is the cost for just the addons
+     */
     public double addOnPrice() {
         int j = 0;
         for (int i = 0; i < addOns.length; i++) {
@@ -136,6 +177,11 @@ public class Coffee extends MenuItem implements Customizable{
         return j * ADDON_COST;
     }
 
+    /**
+     * This method checks if 2 instances of coffee are the same.
+     * @param obj which is the object being compared.
+     * @return true if both objects are the same false otherwise.
+     */
     @Override
     public boolean equals(Object obj) {
         if(obj != null && !(obj instanceof Donut)){
