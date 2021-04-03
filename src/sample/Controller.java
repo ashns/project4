@@ -46,7 +46,7 @@ public class Controller {
             sub.getInformation(currentOrder);
             stage.show();
 
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -54,7 +54,7 @@ public class Controller {
     public void pressCoffee(ActionEvent event) throws Exception {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("coffee.fxml"));
-            Parent root1 = (Parent)fxmlLoader.load();
+            Parent root1 = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage.setTitle("Order Coffee");
             stage.setScene(new Scene(root1));
@@ -62,7 +62,7 @@ public class Controller {
             sub.setMainController(this);
             sub.getInformation(currentOrder);
             stage.show();
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
 
         }
@@ -77,10 +77,11 @@ public class Controller {
             orderController sub = fxmlLoader.getController();
             sub.setMainController(this);
             stage.show();
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
     public void pressStoreOrder(ActionEvent event) throws Exception {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("storeOrder.fxml"));
@@ -90,10 +91,11 @@ public class Controller {
             storeOrderController sub = fxmlLoader.getController();
             sub.setMainController(this);
             stage.show();
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
+            //
         }
+
+
     }
-
-
 }
