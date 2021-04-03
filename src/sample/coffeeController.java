@@ -8,6 +8,15 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
+/**
+ * The controller class responds to all input from the coffee UI with appropriate
+ * calls to methods in other classes.
+ * Provides client methods: closeWindow, pressOrder, setMainController, removeItem
+ * displayOrder
+ * Provides accessor methods: getInformation
+ * @author Ashley Stankovits, Matthew Walker
+ *
+ */
 public class coffeeController {
     @FXML
     public Button returnBTN;
@@ -81,9 +90,11 @@ public class coffeeController {
             nullValues.show();
         }
     }
+
     public void getInformation(Order orders){
         this.currentOrder = orders;
     }
+
     public void setMainController(Controller controller) {
         main = controller;
         currentOrder = main.currentOrder;
