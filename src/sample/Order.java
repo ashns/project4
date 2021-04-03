@@ -14,6 +14,7 @@ public class Order implements Customizable{
     private int itemCount = 0;
     DecimalFormat usd = new DecimalFormat("#.##");
     private static int number = 0;
+    private int thisNumber = number+1;
 
     /**
      * This method grows the items array when it hits capacity.
@@ -32,7 +33,7 @@ public class Order implements Customizable{
      */
     public int getNumber()
     {
-        return number;
+        return thisNumber;
     }
 
     /**
@@ -71,10 +72,14 @@ public class Order implements Customizable{
                 items[itemCount] = (Coffee) obj;
             }
             itemCount++;
-            number++;
+
             return true;
         }
         return false;
+    }
+
+    public void updateNumber(){
+        number++;
     }
 
     /**
