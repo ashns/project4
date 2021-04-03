@@ -128,10 +128,17 @@ public class coffeeController {
      * @param event which is the user clicking the "remove item" button
      */
     public void removeItem(ActionEvent event){
-        int index = coffeeLW.getSelectionModel().getSelectedIndex();
-        main.currentOrder.remove(index);
-        coffeeLW.getItems().remove(index);
-        updatePrice();
+        try {
+            int index = coffeeLW.getSelectionModel().getSelectedIndex();
+            main.currentOrder.remove(index);
+            coffeeLW.getItems().remove(index);
+            updatePrice();
+        }
+        catch (Exception e){
+            Alert nullValues = new Alert(Alert.AlertType.ERROR, "Please select the item to be removed.");
+            nullValues.setTitle("Error");
+            nullValues.show();
+        }
     }
 
     /**
