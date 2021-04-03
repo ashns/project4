@@ -24,7 +24,6 @@ public class Coffee extends MenuItem implements Customizable{
     public Coffee(int size, int quantity) {
         super(quantity);
         this.size = size;
-        //this.addOns = addOns;
     }
 
     @Override
