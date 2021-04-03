@@ -46,11 +46,22 @@ public class coffeeController {
     public Order currentOrder = new Order();
     private MenuItem current[];
 
+    /**
+     * The method closes the coffee gui when the user clicks
+     * "return to main menu"
+     * @param event which is the user clicking the "return to main
+     *              menu" button
+     */
     public void closeWindow(ActionEvent event){
         Stage closing = (Stage)returnBTN.getScene().getWindow();
         closing.close();
     }
 
+    /**
+     * This method takes the gui input when the user pressed the order button
+     * to create an instance of coffee and add it to their order.
+     * @param actionEvent which is the user clicking the "add to order" button
+     */
     public void pressOrder(ActionEvent actionEvent) {
         try {
             if (sizeCB.getSelectionModel().getSelectedItem().equals("Short")) {
@@ -91,22 +102,35 @@ public class coffeeController {
         }
     }
 
-    public void getInformation(Order orders){
-        this.currentOrder = orders;
-    }
-
+    /**
+     * This method sets the main controller and receives the order information
+     * from said controller to allow for consistency through all the GUIs.
+     * It also updates the ListView in the gui to display an up to date list
+     * of order items.
+     * @param controller which is the main controller which allowed the coffee gui to be
+     *                   opened.
+     */
     public void setMainController(Controller controller) {
         main = controller;
         currentOrder = main.currentOrder;
         displayOrder();
     }
 
+    /**
+     * This method removes an item from the order when the user clicks
+     * the remove button. It also then removes said item from the list view.
+     * @param event which is the user clicking the "remove item" button
+     */
     public void removeItem(ActionEvent event){
         int index = coffeeLW.getSelectionModel().getSelectedIndex();
         main.currentOrder.remove(index);
         coffeeLW.getItems().remove(index);
     }
 
+    /**
+     * This method is called when the GUI for coffee is initially opened
+     * to populate the ListView with up to date order information.
+     */
     public void displayOrder(){
         current = main.currentOrder.getItems();
         for(int i = 0; i < current.length; i++){
