@@ -34,7 +34,6 @@ public class orderController {
     public void placeOrder(ActionEvent event){
         main.currentStoreOrders.add(main.currentOrder);
         main.currentOrder = new Order();
-        main.currentOrder.setNumber();
         main.currentStoreOrders.add(main.currentOrder);
         closeWindow(event);
     }

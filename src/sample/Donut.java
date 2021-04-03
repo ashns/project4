@@ -19,12 +19,14 @@ public class Donut extends MenuItem{
     String flavor;
     int donutType;
 
+
     /**
      * This is the default constructor for instances of donut.
      * @param number which is the quantity of a specific donut type.
      * @param taste which is the flavor of the donut
      * @param type which is the type of donut (yeast, cake, etc)
      */
+
     public Donut(int number, String taste, int type){
         super(number);
         flavor = taste;

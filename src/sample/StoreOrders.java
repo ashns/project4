@@ -66,7 +66,7 @@ public class StoreOrders implements Customizable{
 
     public String print(){
         String order = "";
-        for(int i = 0; i <= orderCount; i++){
+        for(int i = 0; i < orderCount; i++){
             order += orders[i].print();
         }
         return order;

@@ -36,7 +36,7 @@ public class storeOrderController {
         ordersListView.getItems().removeAll();
         Order currentOrders[] = main.currentStoreOrders.getOrders();
         for(int i = 0; i < currentOrders.length; i++){
-            if(currentOrders[i] != null && currentOrders[i].getNumber() != null)
+            if(currentOrders[i] != null)
                 ordersListView.getItems().add("Order #" + currentOrders[i].getNumber() + "\n" + currentOrders[i].print());
         }
     }
