@@ -34,7 +34,7 @@ public class StoreOrders implements Customizable{
 
     @Override
     public boolean add(Object obj) {
-        if(orderCount <= orders.length){
+        if(orders.length == orderCount+1){
             grow();
         }
         if(obj instanceof Order) {
@@ -60,6 +60,19 @@ public class StoreOrders implements Customizable{
             return false;
     }
 
+    public boolean remove(int index){
+        if(index < orderCount){
+            for(int i = index; i < orderCount; i++){
+                orders[i] = orders[i+1];
+            }
+            orders[orderCount] = null;
+            orderCount--;
+            return true;
+        }
+        else
+            return false;
+    }
+
     public String print(){
         String order = "";
         for(int i = 0; i <= orderCount; i++){
@@ -70,5 +83,9 @@ public class StoreOrders implements Customizable{
 
     public Order[] getOrders(){
         return orders;
+    }
+
+    public int getNumOrders(){
+        return orderCount;
     }
 }
