@@ -22,12 +22,15 @@ public class donutController {
     public ListView currentListView;
     @FXML
     public Button returnBTN;
+    @FXML
+    public Button removeBTN;
 
     Controller main;
     final int YEAST_DONUT = 1;
     final int CAKE_DONUT = 2;
     final int DONUT_HOLE = 3;
     private Order newOrder = new Order();
+    private MenuItem current[];
 
 
     public int getType(){
@@ -50,7 +53,7 @@ public class donutController {
             int quantity = (int) quantitySlider.getValue();
             Donut newDonut = new Donut(quantity, flavor, type);
             main.currentOrder.add(newDonut);
-            currentListView.getItems().add(newDonut.toString());
+            displayOrder();
         }catch(Exception e) {
             Alert nullValues = new Alert(Alert.AlertType.ERROR, "Please enter valid donut type or flavor.");
             nullValues.setTitle("Error");
@@ -112,4 +115,17 @@ public class donutController {
         closing.close();
     }
 
+    public void removeItem(ActionEvent event){
+        int index = currentListView.getSelectionModel().getSelectedIndex();
+        main.currentOrder.remove(index);
+        currentListView.getItems().remove(index);
+    }
+
+    public void displayOrder(){
+        current = main.currentOrder.getItems();
+        for(int i = 0; i < current.length; i++){
+            if(current[i] != null)
+                currentListView.getItems().add(current[i]);
+        }
+    }
 }

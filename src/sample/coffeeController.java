@@ -27,11 +27,14 @@ public class coffeeController {
     public Button orderBTN;
     @FXML
     public ListView coffeeLW;
+    @FXML
+    public Button removeBTN;
     int size;
     int quantity;
     String[] addOns = new String[4];
     Controller main;
     public Order currentOrder = new Order();
+    private MenuItem current[];
 
     public void closeWindow(ActionEvent event){
         Stage closing = (Stage)returnBTN.getScene().getWindow();
@@ -67,8 +70,10 @@ public class coffeeController {
             if (whippedCB.isSelected()) {
                 newCoffee.add("whipped creme");
             }
-            coffeeLW.getItems().add(newCoffee.toString());
+
             main.currentOrder.add(newCoffee);
+            displayOrder();
+
         }catch(Exception e){
             Alert nullValues = new Alert(Alert.AlertType.ERROR, "Please enter valid coffee quantity and size");
             nullValues.setTitle("Error");
@@ -80,5 +85,19 @@ public class coffeeController {
     }
     public void setMainController(Controller controller) {
         main = controller;
+    }
+
+    public void removeItem(ActionEvent event){
+        int index = coffeeLW.getSelectionModel().getSelectedIndex();
+        main.currentOrder.remove(index);
+        coffeeLW.getItems().remove(index);
+    }
+
+    public void displayOrder(){
+        current = main.currentOrder.getItems();
+        for(int i = 0; i < current.length; i++){
+            if(current[i] != null)
+                coffeeLW.getItems().add(current[i]);
+        }
     }
 }

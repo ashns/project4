@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
-<?import javafx.collections.FXCollections?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.coffeeController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.coffeeController">
    <children>
       <ImageView fitHeight="168.0" fitWidth="253.0" layoutX="21.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -43,7 +39,8 @@
             </FXCollections>
          </items>
       </ComboBox>
-      <Button fx:id="orderBTN" onAction="#pressOrder" layoutX="181.0" layoutY="308.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="109.0" text="Add to Order" />
-      <Button fx:id="returnBTN" layoutX="181.0" layoutY="341.0" mnemonicParsing="false" onAction="#closeWindow" prefHeight="26.0" prefWidth="109.0" text="Return to Main" />
+      <Button fx:id="orderBTN" layoutX="181.0" layoutY="291.0" mnemonicParsing="false" onAction="#pressOrder" prefHeight="26.0" prefWidth="109.0" text="Add to Order" />
+      <Button fx:id="returnBTN" layoutX="181.0" layoutY="359.0" mnemonicParsing="false" onAction="#closeWindow" prefHeight="26.0" prefWidth="109.0" text="Return to Main" />
+      <Button fx:id="removeBTN" onAction="#removeItem" layoutX="181.0" layoutY="327.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="109.0" text="Remove Item" />
    </children>
 </AnchorPane>
