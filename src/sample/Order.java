@@ -15,6 +15,7 @@ public class Order implements Customizable{
     DecimalFormat usd = new DecimalFormat("#.##");
     private static int number = 0;
     private int thisNumber = number+1;
+    private final double NJ_TAX = 1.06625;
 
     /**
      * This method grows the items array when it hits capacity.
@@ -150,7 +151,7 @@ public class Order implements Customizable{
         for(int i = 0; i < itemCount; i++){
             order += items[i].toString();
         }
-        order += "\n---------------\nTotal Price: $" + usd.format(orderPrice()) + "\n";
+        order += "\n---------------\nTotal Price: $" + usd.format(orderPrice() * NJ_TAX) + "\n";
         return order;
     }
 
