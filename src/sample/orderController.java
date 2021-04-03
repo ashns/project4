@@ -1,6 +1,7 @@
 package sample;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -35,10 +36,17 @@ public class orderController {
      * @param event which is the user clicking the "remove" button.
      */
     public void removeItem(ActionEvent event){
-        int index = orderListView.getSelectionModel().getSelectedIndex();
-        main.currentOrder.remove(index);
-        orderListView.getItems().remove(index);
-        updatePrice();
+        try {
+            int index = orderListView.getSelectionModel().getSelectedIndex();
+            main.currentOrder.remove(index);
+            orderListView.getItems().remove(index);
+            updatePrice();
+        }
+        catch (Exception e){
+            Alert nullValues = new Alert(Alert.AlertType.ERROR, "Please select the item to be removed.");
+            nullValues.setTitle("Error");
+            nullValues.show();
+        }
     }
 
     /**
@@ -47,10 +55,16 @@ public class orderController {
      * @param event which is the user clicking the "place order" button.
      */
     public void placeOrder(ActionEvent event){
+        if(main.currentOrder.getItemCount() > 0){
         main.currentStoreOrders.add(main.currentOrder);
         main.currentOrder.updateNumber();
         main.currentOrder = new Order();
-        closeWindow(event);
+        closeWindow(event);}
+        else{
+            Alert nullValues = new Alert(Alert.AlertType.ERROR, "Cannot place an empty order");
+            nullValues.setTitle("Error");
+            nullValues.show();
+        }
     }
 
     /**

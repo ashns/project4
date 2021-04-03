@@ -71,9 +71,16 @@ public class storeOrderController {
      *                    button.
      */
     public void pressRemove(ActionEvent actionEvent) {
-        int index = ordersListView.getSelectionModel().getSelectedIndex();
-        main.currentStoreOrders.remove(index);
-        ordersListView.getItems().remove(index);
+        try {
+            int index = ordersListView.getSelectionModel().getSelectedIndex();
+            main.currentStoreOrders.remove(index);
+            ordersListView.getItems().remove(index);
+        }
+        catch (Exception e){
+            Alert nullValues = new Alert(Alert.AlertType.ERROR, "Please select the order to be removed.");
+            nullValues.setTitle("Error");
+            nullValues.show();
+        }
     }
 
 
