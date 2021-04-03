@@ -4,6 +4,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
+
+import java.text.DecimalFormat;
+
 public class donutController {
     @FXML
     public ComboBox donutTypeCB;
@@ -19,6 +22,8 @@ public class donutController {
     public Button returnBTN;
     @FXML
     public Button removeBTN;
+    @FXML
+    public Label priceLabel;
 
     Controller main;
     final int YEAST_DONUT = 1;
@@ -26,7 +31,7 @@ public class donutController {
     final int DONUT_HOLE = 3;
     private Order newOrder = new Order();
     private MenuItem current[];
-
+    DecimalFormat usd = new DecimalFormat("#.##");
 
     public int getType(){
         String type = donutTypeCB.getSelectionModel().getSelectedItem().toString();
@@ -49,7 +54,7 @@ public class donutController {
             Donut newDonut = new Donut(quantity, flavor, type);
             main.currentOrder.add(newDonut);
             currentListView.getItems().add(newDonut);
-
+            updatePrice();
 
         }catch(Exception e) {
             Alert nullValues = new Alert(Alert.AlertType.ERROR, "Please enter valid donut type or flavor.");
@@ -118,6 +123,7 @@ public class donutController {
         int index = currentListView.getSelectionModel().getSelectedIndex();
         main.currentOrder.remove(index);
         currentListView.getItems().remove(index);
+        updatePrice();
     }
 
     public void displayOrder(){
@@ -126,5 +132,10 @@ public class donutController {
             if(current[i] != null)
                 currentListView.getItems().add(current[i]);
         }
+        updatePrice();
+    }
+
+    public void updatePrice(){
+        priceLabel.setText("Total: $" + usd.format(main.currentOrder.orderPrice()));
     }
 }
