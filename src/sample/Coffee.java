@@ -59,9 +59,9 @@ public class Coffee extends MenuItem implements Customizable{
     public boolean remove(Object obj) {
         if(obj instanceof String){
             String temp = (String)obj;
-            for(int i = 0; i<addOns.length; i++){
+            for(int i = 0; i < addOns.length; i++){
                 if(addOns[i].equals(temp)){
-                    addOns[i]=null;
+                    addOns[i] = null;
                     return true;
                 }
             }
@@ -97,7 +97,7 @@ public class Coffee extends MenuItem implements Customizable{
             } else {
                 if (hasAddOns == false) {
                     tempMessage += " with " + addOns[i];
-                    hasAddOns=true;
+                    hasAddOns = true;
                 } else {
                     tempMessage += ", " + addOns[i];
                 }
@@ -134,7 +134,7 @@ public class Coffee extends MenuItem implements Customizable{
                 j++;
             }
         }
-        return j*ADDON_COST;
+        return j * ADDON_COST;
     }
 
     @Override

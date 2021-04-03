@@ -1,6 +1,4 @@
 package sample;
-
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -31,7 +29,6 @@ public class coffeeController {
     public Button removeBTN;
     int size;
     int quantity;
-    String[] addOns = new String[4];
     Controller main;
     public Order currentOrder = new Order();
     private MenuItem current[];

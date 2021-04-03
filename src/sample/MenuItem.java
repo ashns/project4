@@ -5,16 +5,11 @@ public class MenuItem {
     int quantity;
 
     public MenuItem(int number){
-
         quantity = number;
     }
 
     public double itemPrice(){
         return 0;
-    }
-
-    public void setQuantity(int newQuantity){
-        this.quantity = newQuantity;
     }
 
     public int getQuantity(){

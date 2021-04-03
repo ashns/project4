@@ -6,7 +6,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.Label;
@@ -26,13 +25,9 @@ public class Controller {
     @FXML
     Button storeOrderBTN = new Button();
     @FXML
-    Label testl = new Label();
-
     public StoreOrders currentStoreOrders = new StoreOrders();
     public Order currentOrder = new Order();
-    public int orderNum = 0;
 
-    String test = "hello!";
 
     public void pressDonut(ActionEvent event) throws Exception {
         try {
@@ -45,7 +40,6 @@ public class Controller {
             sub.setMainController(this);
             sub.getInformation(currentOrder);
             stage.show();
-
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -64,7 +58,6 @@ public class Controller {
             stage.show();
         } catch (Exception e) {
             e.printStackTrace();
-
         }
     }
 
@@ -93,9 +86,6 @@ public class Controller {
             stage.show();
         } catch (Exception e) {
             e.printStackTrace();
-            //
         }
-
-
     }
 }

@@ -3,8 +3,8 @@ package sample;
 import java.text.DecimalFormat;
 
 public class Order implements Customizable{
-    final int NOT_FOUND = -1;
 
+    final int NOT_FOUND = -1;
     private MenuItem items[] = new MenuItem[4];
     private int itemCount = 0;
     DecimalFormat usd = new DecimalFormat("#.##");

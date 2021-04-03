@@ -7,7 +7,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -51,7 +50,7 @@ public class storeOrderController {
 
     public void pressExport(ActionEvent actionEvent) {
         Alert cancel = new Alert(Alert.AlertType.ERROR, "Export cancelled.");
-        if(main.currentStoreOrders.getNumOrders()==0){
+        if(main.currentStoreOrders.getNumOrders() == 0){
             Alert emptyDatabase = new Alert(Alert.AlertType.ERROR, "There are no store orders.");
             emptyDatabase.show();
             return;
@@ -81,6 +80,5 @@ public class storeOrderController {
         }
         else
             cancel.show();
-        //
     }
 }
