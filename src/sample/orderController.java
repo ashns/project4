@@ -26,6 +26,10 @@ public class orderController {
     public ListView orderListView;
     @FXML
     public Label priceLabel;
+    @FXML
+    public Label tax;
+    @FXML
+    public Label taxTotal;
 
     Controller main;
     private MenuItem current[];
@@ -116,9 +120,9 @@ public class orderController {
      */
     public void updatePrice(){
         priceLabel.setText("Subtotal: $" + usd.format(main.currentOrder.orderPrice()));
-        //tax.setText("Sales Tax: $" + usd.format(main.currentOrder.calculateSalesTax()));
-        //total.setText("Total: $" + usd.format(main.currentOrder.calculateSalesTax()
-        //      + main.currentOrder.orderPrice()));
+        tax.setText("Sales Tax: $" + usd.format(main.currentOrder.calculateSalesTax()));
+        taxTotal.setText("Total: $" + usd.format(main.currentOrder.calculateSalesTax()
+              + main.currentOrder.orderPrice()));
     }
 
 }
