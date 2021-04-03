@@ -82,6 +82,7 @@ public class coffeeController {
     }
     public void setMainController(Controller controller) {
         main = controller;
+        currentOrder = main.currentOrder;
         displayOrder();
     }
 

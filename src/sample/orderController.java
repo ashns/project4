@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
+import java.text.DecimalFormat;
 
 public class orderController {
     @FXML
@@ -21,6 +22,7 @@ public class orderController {
 
     Controller main;
     private MenuItem current[];
+    DecimalFormat usd = new DecimalFormat("#.##");
 
     public void removeItem(ActionEvent event){
         int index = orderListView.getSelectionModel().getSelectedIndex();
@@ -52,7 +54,7 @@ public class orderController {
             if(current[i] != null)
                 orderListView.getItems().add(current[i]);
         }
-        priceLabel.setText("Total: $" + main.currentOrder.orderPrice());
+        priceLabel.setText("Total: $" + usd.format(main.currentOrder.orderPrice()));
     }
 
 }
