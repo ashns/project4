@@ -11,11 +11,7 @@ public class Donut extends MenuItem{
     String flavor;
     int donutType;
 
-    public Donut(){
-        super( 1);
-        flavor = "";
-        donutType = 1;
-    }
+
 
     public Donut(int number, String taste, int type){
         super(number);
