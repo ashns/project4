@@ -49,7 +49,6 @@ public class Controller {
             stage.setScene(new Scene(root1));
             donutController sub = fxmlLoader.getController();
             sub.setMainController(this);
-            sub.getInformation(currentOrder);
             stage.show();
         } catch (Exception e) {
             e.printStackTrace();
