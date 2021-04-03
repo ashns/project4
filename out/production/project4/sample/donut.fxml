@@ -16,9 +16,9 @@
       <ComboBox fx:id="donutTypeCB" layoutX="14.0" layoutY="177.0" onAction="#pressDonutType" prefWidth="150.0" promptText="Select a donut">
          <items>
             <FXCollections fx:factory="observableArrayList">
-               <String fx:value="yeast donut" />
-               <String fx:value="cake donut" />
-               <String fx:value="donut hole" />
+               <String fx:value="Yeast donut" />
+               <String fx:value="Cake donut" />
+               <String fx:value="Donut hole" />
             </FXCollections>
          </items>
       </ComboBox>
