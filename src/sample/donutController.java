@@ -55,6 +55,7 @@ public class donutController {
             main.currentOrder.add(newDonut);
             currentListView.getItems().add(newDonut);
 
+
         }catch(Exception e) {
             Alert nullValues = new Alert(Alert.AlertType.ERROR, "Please enter valid donut type or flavor.");
             nullValues.setTitle("Error");
@@ -109,6 +110,7 @@ public class donutController {
 
     public void setMainController(Controller controller) {
         main = controller;
+        newOrder = main.currentOrder;
         displayOrder();
     }
 
