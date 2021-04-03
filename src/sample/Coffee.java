@@ -157,6 +157,7 @@ public class Coffee extends MenuItem implements Customizable{
                 break;
             case SIZE_VENTI:
                 price = VENTI_PRICE + addOnPrice();
+                break;
             default: price = 0;
         }
         return price * quantity;
