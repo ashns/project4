@@ -10,6 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <columnConstraints>
@@ -47,7 +48,10 @@
                   </Button>
                </children>
             </VBox>
-            <Label fx:id="tempL" layoutX="307.0" layoutY="42.0" text="Awaiting message" />
+            <Label fx:id="tempL" layoutX="307.0" layoutY="42.0" text="Rutgers Café">
+               <font>
+                  <Font name="Bell MT" size="26.0" />
+               </font></Label>
          </children></AnchorPane>
    </children>
 </GridPane>
