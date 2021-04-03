@@ -72,7 +72,7 @@ public class coffeeController {
             }
 
             main.currentOrder.add(newCoffee);
-            displayOrder();
+            coffeeLW.getItems().add(newCoffee);
 
         }catch(Exception e){
             Alert nullValues = new Alert(Alert.AlertType.ERROR, "Please enter valid coffee quantity and size");
@@ -85,6 +85,7 @@ public class coffeeController {
     }
     public void setMainController(Controller controller) {
         main = controller;
+        displayOrder();
     }
 
     public void removeItem(ActionEvent event){

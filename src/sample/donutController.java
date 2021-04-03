@@ -53,7 +53,8 @@ public class donutController {
             int quantity = (int) quantitySlider.getValue();
             Donut newDonut = new Donut(quantity, flavor, type);
             main.currentOrder.add(newDonut);
-            displayOrder();
+            currentListView.getItems().add(newDonut);
+
         }catch(Exception e) {
             Alert nullValues = new Alert(Alert.AlertType.ERROR, "Please enter valid donut type or flavor.");
             nullValues.setTitle("Error");
@@ -108,6 +109,7 @@ public class donutController {
 
     public void setMainController(Controller controller) {
         main = controller;
+        displayOrder();
     }
 
     public void closeWindow(ActionEvent event){
